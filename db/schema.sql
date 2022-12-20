@@ -17,6 +17,7 @@ CREATE TABLE tasks (
     id INT NOT NULL,
     client_id INT,
     task_details TEXT,
+    task_status BOOLEAN,
     FOREIGN_KEY (client_id) REFERENCES clients(id) ON DELETE SET NULL
 );
 
