@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   {
     host: 'localhost',
     dialect: 'mysql',
-    // not sure what port to use or select -naser
+// not sure what port to use or select 
     port: 3306
   }
 );
