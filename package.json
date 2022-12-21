@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/HawaFallay/Happy-Helper-/issues"
   },
-  "homepage": "https://github.com/HawaFallay/Happy-Helper-#readme"
+  "homepage": "https://github.com/HawaFallay/Happy-Helper-#readme",
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  }
 }
