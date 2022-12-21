@@ -1,0 +1,23 @@
+{
+  "name": "happy-helper-",
+  "version": "1.0.0",
+  "description": "Project 2",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HawaFallay/Happy-Helper-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HawaFallay/Happy-Helper-/issues"
+  },
+  "homepage": "https://github.com/HawaFallay/Happy-Helper-#readme"
+}
