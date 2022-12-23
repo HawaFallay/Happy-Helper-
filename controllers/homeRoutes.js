@@ -13,8 +13,8 @@ router.get('/clientpage', async (req, res) => {
     res.render('clientpage');
 });
 
-router.get('/voluteerpage', async (req, res) => {
-    res.render('volunteerpage');
+router.get('/helperspage', async (req, res) => {
+    res.render('helperspage');
 });
 
 router.get('/confirmation', async (req, res) => {
