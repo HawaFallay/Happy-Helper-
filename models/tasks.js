@@ -7,6 +7,7 @@ const sequelize = require('../config/connection');
 class Tasks extends Model {}
 
 Tasks.init(
+    {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -27,8 +28,10 @@ Tasks.init(
         // wondering how to set the default time to the current time stamp
     status_id: {
         type: DataTypes.INTEGER
-    },
+    }
+},
     {
+        //link to database connection
         sequelize,
         timestamps: false,
         freezeTableName: true,

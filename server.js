@@ -7,7 +7,7 @@ const session = require('express-session');
 const helpers = require('./utils/helpers');
 const bcrypt = require('bcrypt');
 //importing mode to sync table with database
-const Tasks = require ('./model/Tasks');
+const Tasks = require ('./models/Tasks');
 
 const app = express();
 
