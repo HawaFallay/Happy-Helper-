@@ -1,5 +1,5 @@
-const { Model, Datatypes, DataTypes } = require('sequelize');
-const { toDefaultValue } = require('sequelize/types/utils');
+const { Model, DataTypes } = require('sequelize');
+//const { toDefaultValue } = require('sequelize/types/utils');
 
 const sequelize = require('../config/connection');
 
@@ -16,10 +16,17 @@ Tasks.init(
     task: {
         type: DataTypes.STRING,
         allowNull: false,
-        task_details: DataTypes.TEXT,
-        task_time: DataTypes.DATE,
+        primaryKey:true
+    },
+    task_details: {
+        type: DataTypes.TEXT
+    },
+    task_time: {
+        type: DataTypes.DATE
+    },
         // wondering how to set the default time to the current time stamp
-        status_id: DataTypes.INTEGER
+    status_id: {
+        type: DataTypes.INTEGER
     },
     {
         sequelize,
