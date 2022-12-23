@@ -6,8 +6,12 @@ const routes = require('./controllers');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const bcrypt = require('bcrypt');
+//importing mode to sync table with database
+const Tasks = require ('./model/Tasks');
 
 const app = express();
+
+
 const PORT = process.env.PORT || 3001;
 
 const sess = {
@@ -35,12 +39,3 @@ sequelize.sync({ force: false }).then(() => {
 
 
 
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-sequelize.sync().then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});

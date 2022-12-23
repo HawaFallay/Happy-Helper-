@@ -3,6 +3,7 @@ const { toDefaultValue } = require('sequelize/types/utils');
 
 const sequelize = require('../config/connection');
 
+
 class Tasks extends Model {}
 
 Tasks.init(
@@ -18,8 +19,17 @@ Tasks.init(
         task_details: DataTypes.TEXT,
         task_time: DataTypes.DATE,
         // wondering how to set the default time to the current time stamp
-        defaultValue.NOW,
-,
-
+        status_id: DataTypes.INTEGER
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'tasks'
     }
-)
+);
+
+
+
+module.exports = Tasks;
