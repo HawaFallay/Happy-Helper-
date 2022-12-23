@@ -6,8 +6,12 @@ const routes = require('./controllers');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const bcrypt = require('bcrypt');
+//importing mode to sync table with database
+const Tasks = require ('./models/Tasks');
 
 const app = express();
+
+
 const PORT = process.env.PORT || 3001;
 
 const sess = {
@@ -32,3 +36,6 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
 });
+
+
+
