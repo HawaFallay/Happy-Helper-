@@ -1,7 +1,23 @@
 const express = require('express');
+const { INTEGER } = require('sequelize');
 const router = express.Router();
 //const sequelize = require('./config/connection');
 const Tasks = require('../../models/tasks');
+
+
+
+router.get('/task_status', (req, res) => {
+    Book.findAll({
+      // Order by title in ascending order
+      order: ['task'],
+      where: {
+        // Only get books that have this boolean set to TRUE
+        status_id: INTEGER
+      },
+    }).then((taskStatus) => {
+      res.json(taskStatus);
+    });
+  });
 
 router.post('/', (req, res) => {
     //use sequelize create method to add row to the table
