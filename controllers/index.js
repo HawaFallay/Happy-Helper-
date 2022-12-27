@@ -5,7 +5,8 @@ const registerRoutes = require('./registerRoutes')
 const tasksRoutes = require('./tasksRoutes')
 
 router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
+router.use('/registerpage', registerRoutes);
+router.use('/landingpage', landingPageRoutes);
 
 router.use((req, res) => {
     res.send("<h1>Wrong Route!</h1>")
