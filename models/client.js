@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
@@ -19,18 +19,18 @@ Client.init(
             allowNull: false
         },
         last_name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
-        role_id: {
-            type: Datatypes.INTEGER,
-            references: {
-                model: 'role',
-                key: 'id'
-            }
-        },
+        // role_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'role',
+        //         key: 'id'
+        //     }
+        // },
         location: {
-            type: Datatypes.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
         },
     },
