@@ -2,7 +2,7 @@ const express = require('express');
 const { INTEGER } = require('sequelize');
 const router = express.Router();
 //const sequelize = require('./config/connection');
-const Tasks = require('../../models/tasks');
+const Tasks = require('../models/tasks');
 
 
 
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
     })
     .then((newTask) => {
         //send newly created row as JSON
-        res.json(newTask): 
+        res.json(newTask)
     })
     .catch((err) =>{
         res.json(err);
