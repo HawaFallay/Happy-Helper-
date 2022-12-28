@@ -1,29 +1,30 @@
 const { helpers } = require('handlebars');
 const bcrypt = require('bcrypt');
-
-//using this to store username for now, needs to be saved to DB
-let userPasswords = [];
+const Client = require('../models/client')
 
 const registerRoutes = require('express').Router();
 
 registerRoutes.get('/', async (req,res) => {
-    res.render('registerpage');
+        // Get all books from the book table
+       const bookData =  await Client.findAll()
+          res.json(bookData);
 });
 
 registerRoutes.post('/', async (req,res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        userPasswords.push({
-            id: Date.now().toString(),
-            name: req.body.name,
+        Client.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            username: req.body.username,
             email: req.body.email,
-            password: req.body.hashedPassword
+            password: hashedPassword
         })
-        res.redirect('/landingpage')
+        res.send('/landingpage')
     } catch {
         res.redirect('/registerpage')
     }
-    console.log(userPasswords)
 });
 
 module.exports = registerRoutes
+
