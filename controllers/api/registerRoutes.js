@@ -4,7 +4,11 @@ const Client = require('../../models/client')
 
 const registerRoutes = require('express').Router();
 
-registerRoutes.get('/', async (req,res) => {
+registerRoutes.get('/', async (req, res) => {
+    res.render('registerpage');
+});
+
+registerRoutes.get('/tableClient', async (req,res) => {
         // Get all books from the book table
        const bookData =  await Client.findAll()
           res.json(bookData);

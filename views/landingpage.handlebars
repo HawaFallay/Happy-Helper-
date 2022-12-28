@@ -1,5 +1,5 @@
 <div>
-    <form action="/landingPageRoutes" method="POST">    
+    {{!-- <form action="/api/landingPageRoutes" method="POST">     --}}
         <div class="card text-center mx-auto" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Welcome to the Happy Helper</h5>
@@ -7,19 +7,19 @@
                 <a href="#" class="btn btn-primary">Helper</a>
             </div>
         </div>
-    </form>
+    {{!-- </form> --}}
 </div>
 <br>
 <div>
-    <form action="/landingPageRoutes" method="POST">    
+    <form action="/api/landingPage" method="POST">    
         <div class="card text-center mx-auto" style="width: 18rem;">
             <div class="card-body">
-                <label for="userName">Username</label>
-                <input type="text" name="userName" id="userName" required>
-                <label for="userName">Password</label>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+                <label for="password">Password</label>
                 <input type="text" name="password" id="password" required>  <br>
                 <br><button class="btn btn-primary">login</button><br>
-                <a href="/registerpage">register</a>
+                <a href="/api/registerpage">register</a>
             </div>
         </div>
     </form>

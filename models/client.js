@@ -39,14 +39,14 @@ Client.init(
             // isEmail: true,
             // },
         },
-        // password: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     // must be longer than 8 characters
-        //     validate: {
-        //     len: [8],
-        //     },
-        // },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // must be longer than 8 characters
+            validate: {
+            len: [8],
+            },
+        },
         // role_id: {
         //     type: DataTypes.INTEGER,
         //     // references: {
@@ -54,10 +54,10 @@ Client.init(
         //     //     key: 'id'
         //     // }
         // },
-        location: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
+        // location: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
     },
     {
         sequelize,
