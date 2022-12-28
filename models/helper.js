@@ -22,13 +22,13 @@ Helpers.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        role_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'role',
-                key: 'id'
-            }
-        },
+        // role_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'role',
+        //         key: 'id'
+        //     }
+        // },
         location: {
             type: DataTypes.TEXT,
             allowNull: false

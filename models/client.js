@@ -22,17 +22,42 @@ Client.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        role_id: {
-            type: DataTypes.INTEGER,
-            // references: {
-            //     model: 'role',
-            //     key: 'id'
-            // }
+        username: {
+            type: DataTypes.STRING,
+            // prevents null values
+            allowNull: false,
+            // will only allow alphanumeric characters
+            validate: {
+            isAlphanumeric: true,
+            },
         },
-        location: {
-            type: DataTypes.TEXT,
-            allowNull: false
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            // validate: {
+            // isEmail: true,
+            // },
         },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // must be longer than 8 characters
+            validate: {
+            len: [8],
+            },
+        },
+        // role_id: {
+        //     type: DataTypes.INTEGER,
+        //     // references: {
+        //     //     model: 'role',
+        //     //     key: 'id'
+        //     // }
+        // },
+        // location: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
     },
     {
         sequelize,
