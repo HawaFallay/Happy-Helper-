@@ -12,7 +12,7 @@ Role.init(
             primaryKey: true,
             autoIncrement: true
           },
-          role_title: {
+        role_title: {
             type: DataTypes.STRING,
             allowNull: false
           }
