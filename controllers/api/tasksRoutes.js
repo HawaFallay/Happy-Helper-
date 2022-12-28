@@ -2,7 +2,7 @@ const express = require('express');
 const { INTEGER } = require('sequelize');
 const router = express.Router();
 //const sequelize = require('./config/connection');
-const Tasks = require('../models/tasks');
+const Tasks = require('../../models/tasks');
 
 
 

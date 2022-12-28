@@ -1,6 +1,6 @@
 const { helpers } = require('handlebars');
 const bcrypt = require('bcrypt');
-const Client = require('../models/client')
+const Client = require('../../models/client')
 
 const registerRoutes = require('express').Router();
 
