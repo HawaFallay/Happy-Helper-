@@ -47,13 +47,10 @@ Client.init(
             len: [8],
             },
         },
-        // role_id: {
-        //     type: DataTypes.INTEGER,
-        //     // references: {
-        //     //     model: 'role',
-        //     //     key: 'id'
-        //     // }
-        // },
+        role_title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         // location: {
         //     type: DataTypes.TEXT,
         //     allowNull: false
