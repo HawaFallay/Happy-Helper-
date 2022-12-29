@@ -20,14 +20,17 @@ Tasks.init(
         primaryKey:true
     },
     task_details: {
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
+        allowNull: false
     },
     task_time: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false
     },
         // wondering how to set the default time to the current time stamp
     status_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING,
+        allowNull: false
     }
 },
     {
