@@ -11,10 +11,26 @@
                 <label for="email">Email: </label>
                 <input type="text" name="email" id="email" required>
                 <label for="password">Password: </label>
-                <input type="text" name="password" id="password" required>  <br>
+                <input type="text" name="password" id="password" required><br><br>
+                <label for="role_title">Role title: </label>
+                <select name="role_title" id="role_title">
+                <option value="client">Client</option>
+                <option value="helper">Helper</option>
+                </select><br><br>
+                <label for="location">City (Choose the closest one to you, if you dont find yours here): </label>
+                <select name="location" id="location">
+                <option value="San_Francisco">San Francisco</option>
+                <option value="San_Jose">San Jose</option>
+                <option value="Palo_Alto">Palo Alto</option>
+                <option value="Oakland">Oakland</option>
+                <option value="Sacramento">Sacramento</option>
+                <option value="Santa_Rosa">Santa Rosa</option>
+                <option value="Fresno">Fresno</option>
+                </select> <br>
                 <br><button type="submit" class="btn btn-primary">Register</button><br><br>
-                 <a class="btn btn-primary" href="/api/landingpage">login</a><br><br>
-                 <a href="/api/registerpage/tableClient">Cliet Table Check (Temporary)</a>
+                 <a href="/api/landingpage">login</a><br><br>
+                 <a href="/api/registerpage/tableClient">Cliet Table DB (Temporary)</a>
+                 <a href="/api/registerpage/tableHelper">Helper Table DB (Temporary)</a>
             </div>
         </div>
 </div>

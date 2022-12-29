@@ -51,10 +51,10 @@ Client.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // location: {
-        //     type: DataTypes.TEXT,
-        //     allowNull: false
-        // },
+        location: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
     },
     {
         sequelize,
