@@ -22,17 +22,39 @@ Helpers.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // role_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'role',
-        //         key: 'id'
-        //     }
-        // },
-        location: {
-            type: DataTypes.TEXT,
+        username: {
+            type: DataTypes.STRING,
+            // prevents null values
+            allowNull: false,
+            // will only allow alphanumeric characters
+            validate: {
+            isAlphanumeric: true,
+            },
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            // validate: {
+            // isEmail: true,
+            // },
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // must be longer than 8 characters
+            validate: {
+            len: [8],
+            },
+        },
+        role_title: {
+            type: DataTypes.STRING,
             allowNull: false
         },
+        // location: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
     },
     {
         sequelize,
