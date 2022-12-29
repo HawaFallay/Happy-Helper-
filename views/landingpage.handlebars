@@ -1,17 +1,15 @@
 <div>
-    {{!-- <form action="/api/landingPageRoutes" method="POST">     --}}
+    <form action="/api/landingPage" method="POST">    
         <div class="card text-center mx-auto" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Welcome to the Happy Helper</h5>
-                <a href="#" class="btn btn-primary">Client</a>
-                <a href="#" class="btn btn-primary">Helper</a>
+                <h5 class="card-title">Please select your role:</h5>
+                <label for="roleLogin"></label>
+                <select name="roleLogin" id="roleLogin">
+                <option value="client">Client</option>
+                <option value="helper">Helper</option>
+                </select><br><br>
             </div>
-        </div>
-    {{!-- </form> --}}
-</div>
-<br>
-<div>
-    <form action="/api/landingPage" method="POST">    
+        </div>  
         <div class="card text-center mx-auto" style="width: 18rem;">
             <div class="card-body">
                 <label for="username">Username</label>

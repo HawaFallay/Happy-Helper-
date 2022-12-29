@@ -7,7 +7,7 @@ const tasksRoutes = require('./tasksRoutes');
 
 router.use('/clients', clientRoutes);
 
-//router.use('/registerpage', registerRoutes);
-//router.use('/landingpage', landingPageRoutes);
+router.use('/registerpage', registerRoutes);
+router.use('/landingpage', landingPageRoutes);
 
 module.exports = router;
