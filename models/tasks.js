@@ -28,11 +28,27 @@ Tasks.init(
         allowNull: false
     },
         // wondering how to set the default time to the current time stamp
-    status_id: {
+    task_status: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    client_id: {
+        type: DataTypes.INTEGER,
+        reference: {
+            model: 'client',
+            key: 'id',
+            unique: false
+        }
+    },
+    helper_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'helper',
+            key: 'id',
+            unique: false
+        }
     }
-},
+    },
     {
         //link to database connection
         sequelize,
