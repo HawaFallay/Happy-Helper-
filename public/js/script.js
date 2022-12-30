@@ -12,3 +12,31 @@ const saveRegistrationDetails = (note) =>{
         body: JSON.stringify(note),
       });
 }
+
+const newTaskHandler = async function(event) {
+  event.preventDefault();
+
+  const taskTitle = document.querySelector('input[name="taskTitle"]').value;
+  const taskdeets = document.querySelector('textarea[name="taskDeets"]').value;
+  const location = document.querySelector('input[name="location"]').value;
+  const taskTime = document.querySelector('input[name="task_time"]').value;
+
+
+
+
+  await fetch (`/clientpage`, {
+    method:'POST',
+    body: JSON.stringify({
+      taskTitle,
+      taskdeets,
+      location,
+      taskTime,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  document.location.replace('/clientpage');
+};
+
+document
+  .querySelector('#newTaskForm')
+  .addEventListener('submit', newTaskHandler);

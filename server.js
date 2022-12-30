@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const session = require('express-session');
@@ -18,7 +19,11 @@ const sess = {
   secret: 'secret',
   resave: false,
   saveUninitialized: true,
-}
+  // trying to store sequelize data
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
 app.use(session(sess));
 
