@@ -8,7 +8,7 @@ const clientData = [
         email: 'JGosling@test.com',
         password: 'temporary',
         role_title: "Client",
-        location: '15 Blossom Court, Daly City, CA, 94014'
+        location: '15 Blossom Court, Daly City, CA, 94014',
     },
     {
         first_name: 'Tim',
