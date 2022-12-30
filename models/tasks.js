@@ -3,51 +3,44 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+class Task extends Model {}
 
-class Tasks extends Model {}
-
-Tasks.init(
+Task.init(
     {
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    task: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey:true
-    },
-    task_details: {
-        type: DataTypes.TEXT,
-        allowNull: false
-    },
-    task_time: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-        // wondering how to set the default time to the current time stamp
-    task_status: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    client_id: {
-        type: DataTypes.INTEGER,
-        reference: {
-            model: 'client',
-            key: 'id',
-            unique: false
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        task: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            primaryKey:true
+        },
+        task_details: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        task_time: {
+            //just using a string for now to put in values manually. Woul be nice to find a way to have a drop down menu for date and time in the front end.
+            // wondering how to set the default time to the current time stamp
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+            //Will probably make another table for this, so we can view tasks by status.  
+        task_status: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        //This allows us to get client associated with the task
+        client_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'client',
+                key: 'id'
+            }
         }
-    },
-    helper_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'helper',
-            key: 'id',
-            unique: false
-        }
-    }
     },
     {
         //link to database connection
@@ -61,4 +54,4 @@ Tasks.init(
 
 
 
-module.exports = Tasks;
+module.exports = Task;
