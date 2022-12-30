@@ -28,7 +28,7 @@ const taskData = [
         task: "Go for a walk",
         task_details: "I would like to go for a walk in my neighborhood. I'm elderly, and I would like someone to accompany me and a walk, so I can feel a little safer.",
         task_time: "Monday January 23rd at 12:00pm",
-        task_status: "Accepted",
+        task_status: "completed",
         client_id: 4,
     },
     

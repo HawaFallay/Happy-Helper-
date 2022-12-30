@@ -29,9 +29,12 @@ Task.init(
             allowNull: false
         },
             //Will probably make another table for this, so we can view tasks by status.  
-        task_status: {
-            type: DataTypes.STRING,
-            allowNull: false
+        task_status_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'taskStatus',
+                key: 'id'
+            }
         },
         //This allows us to get client associated with the task
         client_id: {
