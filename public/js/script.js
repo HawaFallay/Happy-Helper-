@@ -12,7 +12,7 @@ const saveRegistrationDetails = (note) =>{
         body: JSON.stringify(note),
       });
 }
-
+// TaskHandler is aimed to take form input and post it onto the dashboard
 const newTaskHandler = async function(event) {
   event.preventDefault();
 
@@ -40,3 +40,14 @@ const newTaskHandler = async function(event) {
 document
   .querySelector('#newTaskForm')
   .addEventListener('submit', newTaskHandler);
+
+  // Date picker for form
+  //is the dollar sign necessary
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true,
+      buttonText: "Select date"
+    });
+  } );
