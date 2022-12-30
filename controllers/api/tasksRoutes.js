@@ -1,22 +1,14 @@
-const express = require('express');
-const { INTEGER } = require('sequelize');
-const router = express.Router();
-//const sequelize = require('./config/connection');
-const Tasks = require('../../models/tasks');
 
+const router = require('express').Router();
+const { Task, Client } = require('../../models');
 
-
-router.get('/task_status', (req, res) => {
-    Book.findAll({
-      // Order by title in ascending order
-      order: ['task'],
-      where: {
-        // Only get books that have this boolean set to TRUE
-        status_id: INTEGER
-      },
-    }).then((taskStatus) => {
-      res.json(taskStatus);
-    });
+router.get('/', async (req, res) => {
+    try {
+      const taskData = await Task.findAll({include: Client});
+      res.status(200).json(taskData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
   });
 
 router.post('/', (req, res) => {
