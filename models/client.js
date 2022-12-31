@@ -27,6 +27,7 @@ Client.init(
             // prevents null values
             allowNull: false,
             // will only allow alphanumeric characters
+            unique: true,
             validate: {
             isAlphanumeric: true,
             },
