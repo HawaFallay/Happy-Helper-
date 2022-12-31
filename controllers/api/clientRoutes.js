@@ -35,4 +35,25 @@ router.put('/:id', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+//Still getting status 500 error
+router.delete('/:id', async (req, res) => {
+    try {
+        const clientData = await Client.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        if (!clientData) {
+            res.status(404).json({ message: "No client found with this id!"});
+            return;
+        }
+
+        res.status(200).json(clientData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
