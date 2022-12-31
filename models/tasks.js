@@ -29,7 +29,7 @@ Task.init(
             allowNull: false
         },
             //Will probably make another table for this, so we can view tasks by status.  
-        task_status_id: {
+        status_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'taskStatus',
@@ -43,7 +43,7 @@ Task.init(
                 model: 'client',
                 key: 'id'
             }
-        }
+        },
     },
     {
         //link to database connection

@@ -13,8 +13,15 @@ Client.hasMany(Task, {
 });
 
 TaskStatus.hasMany(Task, {
-    foreignKey: 'task_status_id',
+    foreignKey: 'status_id',
     onDelete: 'CASCADE'
-})
+});
+
+Task.belongsTo(TaskStatus, {
+    foreignKey: 'status_id',
+    onDelete: 'CASCADE'
+});
+
+
 
 module.exports = { Client, Helper, Task, TaskStatus };

@@ -12,7 +12,7 @@ TaskStatus.init(
             primaryKey: true,
             autoIncrement: true
         },
-        task_status: {
+        status: {
             type: DataTypes.STRING,
             allowNull: false
         }
@@ -22,7 +22,7 @@ TaskStatus.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'tasks'
+        modelName: 'taskStatus'
     }
 );
 
