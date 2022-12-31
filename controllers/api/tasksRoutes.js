@@ -11,6 +11,20 @@ router.get('/', async (req, res) => {
     }
   });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const taskData = await Task.findByPk(req.params.id, { include: Client });
+        if (!taskData) {
+            res.status(404).json({ message: "No task found with this id!"});
+            return;
+        }
+
+        res.status(200).json(taskData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const taskData = await Task.create(req.body);
@@ -39,6 +53,8 @@ router.post('/', async (req, res) => {
 
 //     });
 // });
+
+
 
 
 
