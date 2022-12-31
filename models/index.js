@@ -18,10 +18,17 @@ TaskStatus.hasMany(Task, {
 });
 
 Task.belongsTo(TaskStatus, {
-    foreignKey: 'status_id',
+    foreignKey: 'status_id'
+});
+
+Helper.hasMany(Task, {
+    foreignKey: 'helper_id',
     onDelete: 'CASCADE'
 });
 
+Task.belongsTo(Helper, {
+    foreignKey: 'helper_id'
+})
 
 
 module.exports = { Client, Helper, Task, TaskStatus };

@@ -7,6 +7,7 @@ const taskData = [
         task_time: "Wednesday January 11th at 12:00pm",
         status_id: 2,
         client_id: 1,
+        helper_id: 1,
     },
     {
         task: "Help with groceries",
@@ -14,6 +15,7 @@ const taskData = [
         task_time: "Friday January 13th at 12:00pm",
         status_id: 1,
         client_id: 2,
+        helper_id: null,
     },
     {
         
@@ -22,6 +24,7 @@ const taskData = [
         task_time: "Monday January 23rd at 11:00am",
         status_id: 1,
         client_id: 3,
+        helper_id: null,
     },
     {
         task: "Go for a walk",
@@ -29,6 +32,7 @@ const taskData = [
         task_time: "Monday January 23rd at 12:00pm",
         status_id: 3,
         client_id: 4,
+        helper_id: 2,
     },
     
 ];

@@ -15,7 +15,7 @@ TaskStatus.init(
         status: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
     },
     {
         sequelize,
