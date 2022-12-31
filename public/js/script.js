@@ -22,9 +22,10 @@ const newTaskHandler = async function(event) {
   const taskTime = document.querySelector('input[name="task_time"]').value;
 
 
+// get method to retrieve from database and display it in the client page
+//james goslin
 
-
-  await fetch (`/clientpage`, {
+  await fetch (`/api/task/`, {
     method:'POST',
     body: JSON.stringify({
       taskTitle,
