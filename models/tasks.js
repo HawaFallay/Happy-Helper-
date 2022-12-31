@@ -44,6 +44,14 @@ Task.init(
                 key: 'id'
             }
         },
+        helper_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'helper',
+                key: 'id'
+            }
+        },
     },
     {
         //link to database connection
