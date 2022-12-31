@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { application } = require('express');
 const { Client, Helper, Tasks } = require('../models');
+const auth = require('../middleware/auth');
 
 
 router.get('/', async (req, res) => {
@@ -11,15 +12,15 @@ router.get('/', async (req, res) => {
 //     res.render('registerpage');
 // });
 
-router.get('/clientpage', async (req, res) => {
+router.get('/clientpage', auth, async (req, res) => {
     res.render('clientpage');
 });
 
-router.get('/helperspage', async (req, res) => {
-    res.render('helperspage');
+router.get('/helperspage', auth, async (req, res) => {
+    res.render('helpers');
 });
 
-router.get('/confirmation', async (req, res) => {
+router.get('/confirmation', auth, async (req, res) => {
     res.render('confirmation');
 });
 

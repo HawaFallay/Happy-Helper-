@@ -2,6 +2,7 @@ const { helpers } = require('handlebars');
 const bcrypt = require('bcrypt');
 const Client = require('../../models/client')
 const Helpers = require('../../models/helper')
+const jwt = require ('jsonwebtoken')
 
 const landingPageRoutes = require('express').Router();
 
@@ -63,6 +64,9 @@ landingPageRoutes.post('/', async (req,res) => {
     }  
 
     }
+    const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN/*, { expiresIn: '10' }*/)
+    res.cookie('loginToken', accessToken, { httpOnly:true })
+    //res.json({accessToken: accessToken})
     }
     catch (err) {
         res.status(500).json(err)
