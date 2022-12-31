@@ -31,6 +31,7 @@ Task.init(
             //Will probably make another table for this, so we can view tasks by status.  
         status_id: {
             type: DataTypes.INTEGER,
+            defaultValue: 1,
             references: {
                 model: 'taskStatus',
                 key: 'id'
