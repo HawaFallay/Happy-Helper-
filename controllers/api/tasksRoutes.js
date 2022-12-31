@@ -1,10 +1,10 @@
 
 const router = require('express').Router();
-const { Task, Client } = require('../../models');
+const { Task, Client, TaskStatus } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-      const taskData = await Task.findAll({include: Client});
+      const taskData = await Task.findAll({include: [{ model: Client}, {model: TaskStatus}] });
       res.status(200).json(taskData);
     } catch (err) {
         res.status(500).json(err);
