@@ -2,3 +2,39 @@
     color: green;
     text-align: center;
 }
+
+/*css for helpers page*/
+.flex-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.column {
+    padding: 1rem 0;
+    flex: 1;
+}
+
+.user-form {
+    border: 1px solid;
+    padding: 20px;
+    margin: 0px 5px 0px 5px;
+}
+
+.helper-title,
+.helper-progress {
+    border: 1px solid;
+    margin: 5px 0px 5px 20px;
+    padding: 0px 5px 0px 5px;
+}
+
+.helper-name,
+.helper-location {
+    border: 1px solid;
+    margin: 5px 20px 5px 0px;
+    padding: 0px 5px 0px 5px;
+}
