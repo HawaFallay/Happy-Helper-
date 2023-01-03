@@ -15,14 +15,19 @@ router.get('/', (req, res) => {
 });
 
 router.get('/helpers', auth, async (req, res) => {
-    const { logintoken } = req.cookies;
+    //res.render('helpers');
+    console.log('THIS IS THE HELPERS PAGE');
+        const { loginToken } = req.cookies;
+        console.log(loginToken)
+        const coadedPayload = loginToken.split('.')[1];
+        const decodedPayload = JSON.parse(atob(coadedPayload));
+        console.log(decodedPayload);
+        const {username} = decodedPayload;
 
 try {
-    const data = jwt.verify(logintoken, process.env.JWT_KEY);
-    const { id } = data;
-
-    const helper = await Helper.findByPk(id);
+    const helper = await Helper.findOne({ where: { username: username } });
     const plainHelper = helper.get({ plain: true });
+    console.log(helper);
     console.log(plainHelper);
 
     res.render('helpers', {
@@ -30,6 +35,7 @@ try {
     });
     
 } catch (error) {
+
     if (error.message === "invalid token" || error.message === "jwt must be provided") {
         res.redirect('/landingpage');
     } else {
@@ -37,7 +43,6 @@ try {
     }
 }
 
-    
 });
 
 // router.get('/', async (req, res) => {
