@@ -12,14 +12,16 @@ landingPageRoutes.get('/', async (req,res) => {
 
 landingPageRoutes.post('/', async (req,res) => {
     try {
+        const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN/*, { expiresIn: '10' }*/)
+        res.cookie('loginToken', accessToken, { httpOnly:true })
         console.log(req.body);
     if(req.body.roleLogin === "client") {
         clientStoredInfo = await Client.findOne({where: {username: req.body.username} });
         //console.log(clientStoredInfo.dataValues.password);
 
         if(!clientStoredInfo) {
-            res.status(404).json({message: "login Failed. User not found"})
-            return;
+            return res.status(404).json({message: "login Failed. User not found"})
+            ;
         }
 
         const validPassword = await bcrypt.compare (
@@ -29,23 +31,20 @@ landingPageRoutes.post('/', async (req,res) => {
         //console.log("Console log for valid password bro " + validPassword);
 
         if(!validPassword) {
-            res.status(404).json({message: "Incorrect Password"})
-            return;
+            return res.status(404).json({message: "Incorrect Password"});
         }
 
         if(clientStoredInfo.dataValues.role_title === "client"){
-            res.status(200).render('clientpage')
+            return res.status(200).redirect('/clientpage')
         }
     }
     else {
 
     if(req.body.roleLogin === "helper")
     helperStoredInfo = await Helpers.findOne({where: {username: req.body.username} });
-    //console.log(helperStoredInfo.dataValues.password);
 
     if(!helperStoredInfo) {
-        res.status(404).json({message: "login Failed. User not found"})
-        return;
+        return res.status(404).json({message: "login Failed. User not found"});
     }
 
     const validPassword = await bcrypt.compare (
@@ -55,19 +54,16 @@ landingPageRoutes.post('/', async (req,res) => {
     //console.log("Console log for valid password bro " + validPassword);
 
     if(!validPassword) {
-        res.status(404).json({message: "Incorrect Password"})
-        return;
+        return res.status(404).json({message: "Incorrect Password"});
+        
     }
 
     if(helperStoredInfo.dataValues.role_title === "helper"){
-        res.status(200).render('helpers')
+        return res.status(200).redirect('/helpers');
     }  
+    }
+    }
 
-    }
-    const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN/*, { expiresIn: '10' }*/)
-    res.cookie('loginToken', accessToken, { httpOnly:true })
-    //res.json({accessToken: accessToken})
-    }
     catch (err) {
         res.status(500).json(err)
     }
