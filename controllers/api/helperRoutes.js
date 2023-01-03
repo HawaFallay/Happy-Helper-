@@ -1,7 +1,13 @@
-const router = require('express').Router();
-const { Helper, Task } = require('../../models');
+const { Router } = require("express");
 
-router.get('/', async (req, res) => {
+const Helper = require('../../models/helper');
+const Task = require('../../models/tasks');
+// const router = require('express').Router();
+// const { Helper, Task } = require('../../models');
+
+const helperRouter = new Router();
+
+helperRouter.get('/', async (req, res) => {
     try {
         const helperData = await Helper.findAll({ Task });
         res.status(200).json(helperData);
@@ -10,4 +16,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+
+
+module.exports = helperRouter;
