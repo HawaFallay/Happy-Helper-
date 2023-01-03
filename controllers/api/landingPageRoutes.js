@@ -1,8 +1,8 @@
 const { helpers } = require('handlebars');
 const bcrypt = require('bcrypt');
-const Client = require('../../models/client')
-const Helpers = require('../../models/helper')
-const jwt = require ('jsonwebtoken')
+const Client = require('../../models/client');
+const Helpers = require('../../models/helper');
+const jwt = require ('jsonwebtoken');
 
 const landingPageRoutes = require('express').Router();
 
