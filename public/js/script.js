@@ -25,7 +25,7 @@ const newTaskHandler = async function(event) {
 // get method to retrieve from database and display it in the client page
 //james goslin
 
-  await fetch (`/api/task/`, {
+  await fetch (`/api/task`, {
     method:'POST',
     body: JSON.stringify({
       taskTitle,
