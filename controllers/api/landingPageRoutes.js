@@ -6,11 +6,11 @@ const jwt = require ('jsonwebtoken');
 
 const landingPageRoutes = require('express').Router();
 
-landingPageRoutes.get('/', async (req,res) => {
-    res.render('landingpage');
-})
+// landingPageRoutes.get('/', async (req,res) => {
+//     res.render('landingpage');
+// })
 
-landingPageRoutes.post('/', async (req,res) => {
+landingPageRoutes.post('/login', async (req,res) => {
     try {
         const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN/*, { expiresIn: '10' }*/)
         res.cookie('loginToken', accessToken, { httpOnly:true })
