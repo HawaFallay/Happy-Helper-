@@ -1,7 +1,7 @@
 //fetch request from the landing page
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
+//const name = document.getElementById("name").value;
+// const email = document.getElementById("email").value;
+// const password = document.getElementById("password").value;
 
 const saveRegistrationDetails = (note) =>{
     fetch('/registerpage', {
@@ -16,14 +16,16 @@ const saveRegistrationDetails = (note) =>{
 const newTaskHandler = async function(event) {
   event.preventDefault();
 
-  const taskTitle = document.querySelector('input[name="taskTitle"]').value;
-  const taskdeets = document.querySelector('textarea[name="taskDeets"]').value;
-  const location = document.querySelector('input[name="location"]').value;
-  const taskTime = document.querySelector('input[name="task_time"]').value;
+  const taskTitle = document.querySelector('#taskTitle').value;
+  const taskdeets = document.querySelector('#taskDeets').value;
+  const location = document.querySelector('#location').value;
+  const taskTime = document.querySelector('#task_time').value;
+  //const taskTime = document.querySelector('input[type="date"]').value;
 
 
 // get method to retrieve from database and display it in the client page
 //james goslin
+  console.log(taskTime, taskTitle, taskdeets);
 
   await fetch (`/api/task`, {
     method:'POST',
@@ -36,6 +38,7 @@ const newTaskHandler = async function(event) {
     headers: { 'Content-Type': 'application/json' },
   });
   document.location.replace('/clientpage');
+  console.log(taskTime, taskTitle, taskdeets);
 };
 
 document
