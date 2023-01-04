@@ -1,6 +1,7 @@
 
 const router = require('express').Router();
 const { Task, Client, TaskStatus, Helper } = require('../../models');
+const pullData = require('../../middleware/pullData')
 
 router.get('/', async (req, res) => {
     try {
@@ -25,40 +26,41 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
-    try {
-        const taskData = await Task.create(req.body);
-        res.status(200).json(taskData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-//Was unable to get this to work, but not opposed to using it! Looks like a good way!
-// router.post('/', (req, res) => {
-//     //use sequelize create method to add row to the table
-//     Tasks.create({
-//         id: req.body.id,
-//         task: req.body.task,
-//         task_details: req.body.task_details,
-//         task_time: req.body.task_time,
-//         status_id: req.body.status_id
-//     })
-//     .then((newTask) => {
-//         //send newly created row as JSON
-//         res.json(newTask)
-//     })
-//     .catch((err) =>{
-//         res.json(err);
-
-//     });
+// router.post('/', async (req, res) => {
+//     try {
+//         const taskData = await Task.create(req.body);
+//         res.status(200).json(taskData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
 // });
 
-
-
-
-
-
+//Was unable to get this to work, but not opposed to using it! Looks like a good way!
+router.post('/', pullData, async (req, res) => {
+    //use sequelize create method to add row to the table
+    const { taskTitle, taskdeets, taskTime, location } = req.body
+    console.log("Title: " + taskTitle)
+    console.log("Details: " + taskdeets)
+    console.log("Task_Time: " + taskTime)
+    console.log("Location: " + location)
+    // req.username to pull the username
+    
+    Task.create({
+        task: req.body.taskTitle,
+        task_details: req.body.taskdeets,
+        task_time: req.body.taskTime,
+        client_id: 2,
+        helper_id: null
+    })
+    .then((newTask) => {
+        //send newly created row as JSON
+        res.json(newTask);
+        console.log("User has been created")
+    })
+    .catch((err) =>{
+        res.json(err);
+    });
+});
 
 
 /*router.post('/', async (req, res)=>

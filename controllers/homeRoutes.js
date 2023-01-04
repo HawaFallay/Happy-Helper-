@@ -5,6 +5,7 @@
 const { Router } = require('express');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
+const pullData = require('../middleware/pullData');
 const Helper = require('../models/helper');
 
 
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
     res.render('landingpage');
 });
 
-router.get('/helpers', auth, async (req, res) => {
+router.get('/helpers', auth, pullData, async (req, res) => {
     //res.render('helpers');
     console.log('THIS IS THE HELPERS PAGE');
         const { loginToken } = req.cookies;
