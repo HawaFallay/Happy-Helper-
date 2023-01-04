@@ -138,3 +138,34 @@ form .button{
      margin-bottom: 15px;
      width: 100%;
  }
+
+/* .messages {
+    border: 1px solid;
+    float: left;
+    padding: 5px;
+    margin: 5px 0px 0px 5px
+}
+
+.user-message {
+    border: 1px solid;
+    width: 200px;
+    height: 20px; 
+} */
+
+.task-section {
+    border: 1px solid;
+    margin: 5px 5px 0px 5px;
+    padding: 5px
+}
+
+.task-list {
+    list-style: none;
+}
+
+.accept-button {
+    margin: 0px 10px 0px 10px;
+}
+
+.decline-button {
+    margin: 0px 10px 0px 10px;
+}
