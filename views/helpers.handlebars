@@ -1,1 +1,42 @@
-<h1>Helpers page</h1>
+<form id="helper-form">
+<div class="flex-container">
+    <section class="helper-header">
+        <div>
+            <h1>Happy Helper</h1>
+        </div>
+
+    </section>
+    <section class="user-form">
+        <div class="row">
+            <div class="column helper-name" id="helper-name">Name</div>
+            <div class="column helper-title" id="helper-title">job</div>
+        </div>
+        <div class="row">
+            <div class="column helper-location" id="helper-location">Location</div>
+            <div class="column helper-progress" id="helper-progress">{{ helper.username }}</div>
+        </div>
+    </section>
+</div>
+<button id="testBtn">data</button>
+</form>
+
+<script>
+   
+const newHelper = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch(`/api/helpers`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+};
+//document.getElementById('loginBtn').addEventListener('click', newHelper);
+document.getElementById('testBtn').addEventListener('click', newHelper);
+
+</script>
+<script src="../js/helper.js"></script>
