@@ -1,57 +1,87 @@
 <section>
-<div class="card">
-    <div class="card-header">
-        <h2>Client Page</h2>
-    </div>
-        <form id="newTaskForm" class="card-body needs-validation was-validated" nonvalidate="">
-            <div class="col-md-4">
-                <label for="validationFirstname" class="form-label"></label>First name:</label><br>
-                <input class="form-control" type="text" id="validationFirst_name" name="fname" value="" required="">
-                <div class="valid-feedback">
-                    Looks good!
-                </div><br><br>
+    <div class="card">
+        <div class="card-header">
+            <h2>Client Page</h2>
+        </div>
+        <div class="container">
+            <div class="title"> Task Form Request</div>
+            <div class="content">
+                <form action="/api/clientpage" id="newTaskForm" class="card-body needs-validation was-validated"
+                    nonvalidate="" method="POST">
+                    <div class="task-details">
+                        <div class="input-box">
+                            <div class="col-md-10">
+                                <label for="validationFirstname" class="form-label"></label>First name:</label><br>
+                                <input class="form-control" type="text" id="validationFirst_name" name="fname" value=""
+                                    required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div class="col-md-10">
+                                <label for="validationLastname" class="form-label"></label>Last name:</label><br>
+                                <input class="form-control" type="text" id="validationLast_name" name="lname" value=""
+                                    required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div class="col-md-10">
+                                <label for="TaskTitle" class="form-label"></label>Task Title</label><br>
+                                <input class="form-control" type="text" id="taskTitle" name="taskTitle" value=""
+                                    required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="col-md-4">
+                            <label for="Task" class="form-label"></label>Let Us Know What You Need Help
+                            with</label>
+                            <textarea class="form-control" type="text" id="taskDeets" name="taskDeets" value=""
+                                required=""></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="col-md-8">
+                            <label for="task_time" class="form-label"></label>When do you need help with this
+                            Task?</label><br>
+                            <input class="form-control" type="datetime-local" id="task_time" name="task_time" value=""
+                                required=""><br><br>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="col-md-4">
+                            <label for="location">City (Choose the closest one to you, if you don't find yours
+                                here):
+                            </label>
+                            <select name="location" id="location">
+                                <option value="San_Francisco">San Francisco</option>
+                                <option value="San_Jose">San Jose</option>
+                                <option value="Palo_Alto">Palo Alto</option>
+                                <option value="Oakland">Oakland</option>
+                                <option value="Sacramento">Sacramento</option>
+                                <option value="Santa_Rosa">Santa Rosa</option>
+                                <option value="Fresno">Fresno</option>
+                            </select> <br>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value=" Submit Task" class="submit-btn">
+                    </div>
             </div>
-            <div class="col-md-4">
-                <label for="validationLastname" class="form-label"></label>Last name:</label><br>
-                <input class="form-control" type="text" id="validationLast_name" name="lname" value="" required="">
-                <div class="valid-feedback">
-                    Looks good!    
-                    </div><br><br>
-            </div>
-            <div class="col-md-4">
-                <label for="TaskTitle" class="form-label"></label>Task Title</label><br>
-                <input class="form-control" type="text" id="taskTitle" name="taskTitle" value="" required="">
-                <div class="valid-feedback">
-                    Looks good!
-                </div><br><br>
-            </div>
-            <div class="col-md-4">
-                <label for="Task" class="form-label"></label>Let Us Know What You Need Help with</label><br>
-                <textarea class="form-control" type="text" id="taskDeets" name="taskDeets" value="" required=""></textarea>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div><br><br>
-            <div class="col-md-4">
-                <label for="task_time" class="form-label"></label>When do you need help with this Task?</label><br>
-                <input class="form-control" type="datetime-local" id="task_time" name="task_time" value="" required=""><br><br>
-                <div class="valid-feedback">
-                    Looks good!
-                </div><br><br>
-            </div>
-            <div class="col-md-4">
-                <label for="location">City (Choose the closest one to you, if you don't find yours here): </label>
-                <select name="location" id="location">
-                    <option value="San_Francisco">San Francisco</option>
-                    <option value="San_Jose">San Jose</option>
-                    <option value="Palo_Alto">Palo Alto</option>
-                    <option value="Oakland">Oakland</option>
-                    <option value="Sacramento">Sacramento</option>
-                    <option value="Santa_Rosa">Santa Rosa</option>
-                    <option value="Fresno">Fresno</option>
-                </select> <br>
-                <button type="submit" value="Submit" class="submit-btn"> "Submit Task Request"</button>
-            </div>
-        </form>
-</div>
+            </form>
+        </div>
 </section>

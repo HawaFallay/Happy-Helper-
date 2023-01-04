@@ -24,4 +24,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//add router.put for status
+
 module.exports = router;
