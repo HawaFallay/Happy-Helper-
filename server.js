@@ -20,6 +20,8 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+app.use(express.static('public'));
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
