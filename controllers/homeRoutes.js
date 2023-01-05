@@ -12,7 +12,9 @@ const Helper = require('../models/helper');
 const router = new Router();
 
 router.get('/', (req, res) => {
-    res.render('landingpage');
+    res.render('landingpage', {
+        style: 'landingpage.css'
+    });
 });
 
 router.get('/helpers', auth, pullData, async (req, res) => {
@@ -33,6 +35,7 @@ try {
 
     res.render('helpers', {
         helper: plainHelper,
+        style: 'helpers.css'
     });
     
 } catch (error) {
@@ -55,11 +58,15 @@ try {
 // });
 
 router.get('/clientpage', auth, async (req, res) => {
-    res.render('clientpage');
+    res.render('clientpage', {
+        style: 'client.css'
+    });
 });
 
 router.get('/confirmation', auth, async (req, res) => {
-    res.render('confirmation');
+    res.render('confirmation', {
+        style: 'confirmation.css'
+    });
 });
 
 module.exports = router;
