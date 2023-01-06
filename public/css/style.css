@@ -15,7 +15,7 @@
 }
 
 .column {
-    padding: 1rem 0;
+    padding: 0px;
     flex: 1;
 }
 
@@ -38,7 +38,90 @@
     margin: 5px 20px 5px 0px;
     padding: 0px 5px 0px 5px;
 }
-//css for client task
+
+.task-section {
+  border: 1px solid;
+  margin: 5px 15px 0px 15px;
+  padding: 5px
+}
+
+.table-row {
+  border: 1px solid;
+  
+}
+
+.task-header {
+  padding-left: 10px;
+  color: blueviolet;
+}
+
+.action-header {
+  padding-left: 50px;
+}
+
+.btn-col {
+  margin-top: 25px;
+} 
+
+.loc-btn {
+  margin: 0px 5px 0px 50px;
+}
+
+.task-items {
+  padding-left: 10px;
+}
+
+.details-button {
+  margin: 10px 10px 10px 47px;
+}
+
+.accept-button {
+  margin: 10px 10px 10px 10px;
+}
+
+.decline-button {
+  margin: 10px 10px 10px 10px;
+}
+
+/* .task {
+  margin: -20px 0px 0px 20px;
+}
+
+.task-details {
+  margin: -20px 0px 0px 20px
+}
+
+.time {
+  margin: -20px 0px 0px 20px
+}
+
+.location {
+  margin: -20px 0px 0px 20px
+}
+
+
+
+.task-list {
+    list-style: none;
+}
+
+
+
+.list {
+  margin: 10px 10px 10px -20px
+} */
+
+@media only screen and (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex-basis: 100%;
+  }
+}
+
+/*css for client task
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -46,7 +129,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
-}
+} 
 body{
     height: 100vh;
     display: flex;
@@ -54,7 +137,7 @@ body{
     align-items: center;
     padding: 10px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
+  } 
 
   .container{
     max-width: 700px;
@@ -139,36 +222,6 @@ body{
      width: 100%;
  }
 
-/* .messages {
-    border: 1px solid;
-    float: left;
-    padding: 5px;
-    margin: 5px 0px 0px 5px
-}
-
-.user-message {
-    border: 1px solid;
-    width: 200px;
-    height: 20px; 
-} */
-
-.task-section {
-    border: 1px solid;
-    margin: 5px 5px 0px 5px;
-    padding: 5px
-}
-
-.task-list {
-    list-style: none;
-}
-
-.accept-button {
-    margin: 0px 10px 0px 10px;
-}
-
-.decline-button {
-    margin: 0px 10px 0px 10px;
-}
 
 
 // task list section of client page
