@@ -50,7 +50,7 @@ router.post('/', pullData, async (req, res) => {
         task: req.body.taskTitle,
         task_details: req.body.taskdeets,
         task_time: req.body.taskTime,
-        client_id: 1,
+        client_id: req.userData.id,
         helper_id: null
     })
     .then((newTask) => {
