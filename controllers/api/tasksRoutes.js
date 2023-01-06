@@ -43,13 +43,14 @@ router.post('/', pullData, async (req, res) => {
     console.log("Details: " + taskdeets)
     console.log("Task_Time: " + taskTime)
     console.log("Location: " + location)
+    console.log(req.username)
     // req.username to pull the username
     
     Task.create({
         task: req.body.taskTitle,
         task_details: req.body.taskdeets,
         task_time: req.body.taskTime,
-        client_id: 2,
+        client_id: 1,
         helper_id: null
     })
     .then((newTask) => {
