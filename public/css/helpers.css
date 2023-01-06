@@ -1,6 +1,9 @@
+body {
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
 .flex-container {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .row {
@@ -17,6 +20,7 @@
     border: 1px solid;
     padding: 20px;
     margin: 0px 5px 0px 5px;
+    background: white;
 }
 
 .helper-title,
@@ -36,17 +40,43 @@
 .task-section {
   border: 1px solid;
   margin: 5px 15px 0px 15px;
-  padding: 5px
+  padding: 5px 35px 35px 35px;
+  background: white;
+}
+
+
+
+.task-bar {
+    text-align: center;
+}
+
+.taskBar-btn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 0px 10px;
+}
+
+.taskBar-btn:hover {
+background: #eee;
+border: 1px solid;
+border-color: green;
 }
 
 .table-row {
   border: 1px solid;
-  
 }
 
 .task-header {
   padding-left: 10px;
-  color: blueviolet;
+  margin-left: 10px;
+  
+}
+
+.tHead {
+    color: blueviolet;
 }
 
 .action-header {
