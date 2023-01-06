@@ -109,11 +109,11 @@ body{
   border-color: #9b59b6;
 }
 
-form .button{
+ .button{
     height: 45px;
     margin: 35px 0
   }
-  form .button input{
+  .button input{
     height: 100%;
     width: 100%;
     border-radius: 5px;
@@ -126,7 +126,7 @@ form .button{
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
-  form .button input:hover{
+   .button input:hover{
    /* transform: scale(0.99); */
    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
    }
@@ -168,4 +168,11 @@ form .button{
 
 .decline-button {
     margin: 0px 10px 0px 10px;
+}
+
+
+// task list section of client page
+
+section .task-listN {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
