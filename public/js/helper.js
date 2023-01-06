@@ -121,10 +121,7 @@ const newHelper = async (event) => {
         // listEl.classList.add("list");
         // acceptBtn.classList.add("accept-button");
         // declineBtn.classList.add("decline-button");
-    }
-
-    
-    
+    }  
 };
 
-document.getElementById('testBtn').addEventListener('click', newHelper);
+document.getElementById('availTaskBtn').addEventListener('click', newHelper);
