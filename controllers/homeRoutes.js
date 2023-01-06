@@ -6,7 +6,8 @@ const { Router } = require('express');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const pullData = require('../middleware/pullData');
-const Helper = require('../models/helper');
+const {Helper, Task, Client} = require('../models');
+const { use } = require('./api/landingPageRoutes');
 
 
 const router = new Router();
@@ -17,18 +18,17 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/helpers', auth, pullData, async (req, res) => {
+router.get('/helpers', auth, async (req, res) => {
     //res.render('helpers');
     console.log('THIS IS THE HELPERS PAGE');
-        const { loginToken } = req.cookies;
-        console.log(loginToken)
-        const coadedPayload = loginToken.split('.')[1];
-        const decodedPayload = JSON.parse(atob(coadedPayload));
-        console.log(decodedPayload);
-        const {username} = decodedPayload;
-
+        // const { loginToken } = req.cookies;
+        // console.log(loginToken)
+        // const coadedPayload = loginToken.split('.')[1];
+        // const decodedPayload = JSON.parse(atob(coadedPayload));
+        // console.log(decodedPayload);
+        // const {username} = decodedPayload;
 try {
-    const helper = await Helper.findOne({ where: { username: username } });
+    const helper = await Helper.findOne({ where: { username: req.username } });
     const plainHelper = helper.get({ plain: true });
     console.log(helper);
     console.log(plainHelper);
@@ -49,15 +49,20 @@ try {
 
 });
 
-// router.get('/', async (req, res) => {
-//     res.render('landingpage');
-// });
+router.get('/', async (req, res) => {
+    res.render('landingpage');
+});
 
-// router.get('/registerpage', async (req, res) => {
-//     res.render('registerpage');
-// });
+router.get('/registerpage', async (req, res) => {
+    res.render('registerpage');
+});
 
 router.get('/clientpage', auth, async (req, res) => {
+    console.log("This is the get route: " + req.username);
+    //console.log("This is the get route: " + req.userData);
+    const userTasks = await Task.findAll({where: {client_id: req.userData.id}})
+    console.log(userTasks);
+
     res.render('clientpage', {
         style: 'client.css'
     });
