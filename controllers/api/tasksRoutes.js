@@ -5,7 +5,7 @@ const pullData = require('../../middleware/pullData')
 
 router.get('/', async (req, res) => {
     try {
-      const taskData = await Task.findAll({include: [{ model: Client}, {model: TaskStatus}, { model: Helper}] });
+      const taskData = await Task.findAll({ include: [{ model: Client}, {model: TaskStatus}, { model: Helper}] });
       res.status(200).json(taskData);
     } catch (err) {
         res.status(500).json(err);

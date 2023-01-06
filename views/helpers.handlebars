@@ -22,12 +22,55 @@
         <div class="user-message"></div>
 
     </aside> -->
-    <section class="task-section">
-        <div>
-            <ul id="task-list" class="task-list">
-
-            </ul>
+    <div class="row">
+        <div class="column btn-col">
+            <div class="loc-btn">Location</div>
         </div>
+        <div class="column btn-col">
+            <div>Open Tasks</div>
+        </div>
+        <div class="column btn-col">
+            <div>Accepted Tasks</div>
+        </div>
+        <div class="column btn-col">
+            <div>Completed Tasks</div>
+        </div>
+    </div>
+    <section class="task-section">
+        <div class="row">
+        <div class="column btn-col">
+            <div class="loc-btn">Location</div>
+        </div>
+        <div class="column btn-col">
+            <div>Open Tasks</div>
+        </div>
+        <div class="column btn-col">
+            <div>Accepted Tasks</div>
+        </div>
+        <div class="column btn-col">
+            <div>Completed Tasks</div>
+        </div>
+        </div>
+        <table id="table" style="width: 100%">
+            <tr class="table-row">
+                <th class="task-header" style="width: 15%;">Task</th>
+                {{!-- <th class="details-column" style="width: 25%;">Details</th> --}}
+                <th style="width: 15%;">Client</th>
+                <th style="width: 25%;">Time</th>
+                <th style="width: 15%;">Location</th>
+                <th class="action-header" style="width: 13%;">Actions</th>
+                <th class="blank-header" style="width: 5%;"></th>
+            </tr>
+            <tr>
+                <td class="task-items">Task test</td>
+                <td>client test</td>
+                <td>Time test</td>
+                <td>Location test</td>
+                <td><button class="details-button">Get Details</button></td>
+                <td><button class="accept-button">Accept</button></td>
+                <td><button class="decline-button">Decline</button></td>
+            </tr>
+        </table>
     </section>
 </div>
 <button id="testBtn">Temp Button</button>
