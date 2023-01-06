@@ -26,14 +26,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const taskData = await Task.create(req.body);
-//         res.status(200).json(taskData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 //Was unable to get this to work, but not opposed to using it! Looks like a good way!
 router.post('/', pullData, async (req, res) => {
@@ -44,13 +36,14 @@ router.post('/', pullData, async (req, res) => {
     console.log("Task_Time: " + taskTime)
     console.log("Location: " + location)
     console.log(req.username)
+    console.log(req.userClientData.id);
     // req.username to pull the username
     
     Task.create({
         task: req.body.taskTitle,
         task_details: req.body.taskdeets,
         task_time: req.body.taskTime,
-        client_id: req.userData.id,
+        client_id: req.userClientData.id,
         helper_id: null
     })
     .then((newTask) => {

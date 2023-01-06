@@ -21,12 +21,6 @@ router.get('/', (req, res) => {
 router.get('/helpers', auth, async (req, res) => {
     //res.render('helpers');
     console.log('THIS IS THE HELPERS PAGE');
-        // const { loginToken } = req.cookies;
-        // console.log(loginToken)
-        // const coadedPayload = loginToken.split('.')[1];
-        // const decodedPayload = JSON.parse(atob(coadedPayload));
-        // console.log(decodedPayload);
-        // const {username} = decodedPayload;
 try {
     const helper = await Helper.findOne({ where: { username: req.username } });
     const plainHelper = helper.get({ plain: true });
@@ -59,9 +53,10 @@ router.get('/registerpage', async (req, res) => {
 
 router.get('/clientpage', auth, async (req, res) => {
     console.log("This is the get route: " + req.username);
-    //console.log("This is the get route: " + req.userData);
-    const userTasks = await Task.findAll({where: {client_id: req.userData.id}})
-    console.log(userTasks);
+    console.log("This is the get route: " + req.userHelperData);
+    console.log("This is the get route: " + req.userClientData.id);
+    const userTasks = await Task.findAll({where: {client_id: req.userClientData.id}})
+    //console.log(userTasks);
 
     res.render('clientpage', {
         style: 'client.css'

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { Client } = require('../models')
+const { Client, Helper } = require('../models')
 
 module.exports = async (req, res, next) => {
     try {
@@ -8,15 +8,16 @@ module.exports = async (req, res, next) => {
         const data = await jwt.verify(loginToken, process.env.SECRET_ACCESS_TOKEN);
 
         const { username } = data
-        const userData = await Client.findOne({where: {username: username}});
-        req.userData = userData;
-        console.log("following is the user data: " + userData)
+        const userClientData = await Client.findOne({where: {username: username}});
+        req.userClientData = userClientData;
+        const userHelperData = await Helper.findOne({where: {username: username}});
+        req.userHelperData = userHelperData;
+
         req.username = username;
 
         if(!data) {
             res.redirect('/')
         }
-        console.log("This console log is from Auth Middleware " + JSON.stringify(data));
     }
     catch(error) {
         if(error) {
