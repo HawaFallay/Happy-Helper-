@@ -24,6 +24,19 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+    try {
+        const statusData = await TaskStatus.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.status(200).json(statusData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 //add router.put for status
 
 module.exports = router;

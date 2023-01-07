@@ -78,6 +78,8 @@ const availableTasks = async (event) => {
         tdElAccpetBtn.appendChild(acceptBtn);
         acceptBtn.classList.add("accept-button");
         acceptBtn.setAttribute("data-index", i);
+        acceptBtn.setAttribute("data-status", openTaskList[i].status_id);
+        acceptBtn.setAttribute("data-task", openTaskList[i].id);
 
         //Decline button column
         let tdElDeclineBtn = document.createElement("td");
@@ -127,10 +129,35 @@ const availableTasks = async (event) => {
         };
         
         //Accept Request
-        acceptBtn.addEventListener("click", function(event) {
+        acceptBtn.addEventListener("click", async function(event) {
             event.preventDefault();
             if (event.target && event.target.dataset.index !=undefined) {
                 console.log(event.target.dataset.index);
+                console.log(event.target.dataset.status);
+                
+                const response2 = await fetch(`/api/taskStatus/${event.target.dataset.status}`, {
+                    method: 'PUT',
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({
+                        "status": "Accepted"
+                    })
+                });
+                const result2 = await response2.json();
+                console.log(result2);
+
+                const response3 = await fetch(`/api/task/${event.target.dataset.task}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "helper_id": document.querySelector(".user-form").dataset.helper
+                    })
+                });
+                const result3 = await response3.json();
+                console.log(result3);
             }
         })
     }  

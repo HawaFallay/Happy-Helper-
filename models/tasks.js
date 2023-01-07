@@ -25,7 +25,7 @@ Task.init(
         task_time: {
             //just using a string for now to put in values manually. Woul be nice to find a way to have a drop down menu for date and time in the front end.
             // wondering how to set the default time to the current time stamp
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false
         },
             //Will probably make another table for this, so we can view tasks by status.  
