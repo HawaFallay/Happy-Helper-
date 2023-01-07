@@ -2,7 +2,7 @@
 <div class="flex-container">
     <section class="helper-header">
         <div>
-            <h1>Happy Helper</h1>
+            <h1>Profile</h1>
         </div>
 
     </section>
@@ -16,52 +16,26 @@
             <div class="column helper-progress" id="helper-progress">{{ helper.username }}</div>
         </div>
     </section>
-    <!--
-    <aside class="messages">
-        <div>Messsages</div>
-        <div class="user-message"></div>
-
-    </aside> -->
-    <div class="row">
-        <div class="column btn-col">
-            <div class="loc-btn">Location</div>
-        </div>
-        <div class="column btn-col">
-            <div>Open Tasks</div>
-        </div>
-        <div class="column btn-col">
-            <div>Accepted Tasks</div>
-        </div>
-        <div class="column btn-col">
-            <div>Completed Tasks</div>
-        </div>
-    </div>
+    
     <section class="task-section">
-        <div class="row">
-        <div class="column btn-col">
-            <div class="loc-btn">Location</div>
-        </div>
-        <div class="column btn-col">
-            <div>Open Tasks</div>
-        </div>
-        <div class="column btn-col">
-            <div>Accepted Tasks</div>
-        </div>
-        <div class="column btn-col">
-            <div>Completed Tasks</div>
-        </div>
+        <div class="task-bar">
+            <button class="taskBar-btn location-btn">Location</button>
+            <button class="taskBar-btn availTask-btn" id="availTaskBtn" >Available Tasks</button>
+            <button class="taskBar-btn acceptTask-btn">Accepted Tasks</button>
+            <button class="taskBar-btn completeTask-btn">Completed Tasks</button>
         </div>
         <table id="table" style="width: 100%">
             <tr class="table-row">
-                <th class="task-header" style="width: 15%;">Task</th>
+                <th class="tHead task-header" style="width: 15%;">Task</th>
                 {{!-- <th class="details-column" style="width: 25%;">Details</th> --}}
-                <th style="width: 15%;">Client</th>
-                <th style="width: 25%;">Time</th>
-                <th style="width: 15%;">Location</th>
-                <th class="action-header" style="width: 13%;">Actions</th>
-                <th class="blank-header" style="width: 5%;"></th>
+                <th class="tHead" style="width: 15%;">User</th>
+                <th class="tHead" style="width: 20%;">Time</th>
+                <th class="tHead" style="width: 15%;">Location</th>
+                <th class="tHead action-header" style="width: 13%;">Actions</th>
+                <th class="tHead blank-header" style="width: 5%;"></th>
+                <th class="tHead blank-header" style="width: 5%;"></th>
             </tr>
-            <tr>
+            {{!-- <tr>
                 <td class="task-items">Task test</td>
                 <td>client test</td>
                 <td>Time test</td>
@@ -69,11 +43,22 @@
                 <td><button class="details-button">Get Details</button></td>
                 <td><button class="accept-button">Accept</button></td>
                 <td><button class="decline-button">Decline</button></td>
-            </tr>
+            </tr> --}}
         </table>
     </section>
 </div>
-<button id="testBtn">Temp Button</button>
+<!-- Modal based on code from W3schools.com -->
+<div id="modal" class="modal">
+    <div class="m-box">
+        <div class="m-header">
+            <span class="close">&times;</span>
+            <h2 id="task-title-modal"></h2>
+        </div>
+        <div class="m-body">
+            <p id="m-body"></p>
+        </div>
+    </div>
+</div>
 </form>
 
 <script src="../js/helper.js"></script>

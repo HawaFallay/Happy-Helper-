@@ -1,0 +1,215 @@
+body {
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.flex-container {
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.column {
+    padding: 0px;
+    flex: 1;
+}
+
+.user-form {
+    border: 1px solid;
+    padding: 20px;
+    margin: 0px 5px 0px 5px;
+    background: white;
+}
+
+.helper-title,
+.helper-progress {
+    border: 1px solid;
+    margin: 5px 0px 5px 20px;
+    padding: 0px 5px 0px 5px;
+}
+
+.helper-name,
+.helper-location {
+    border: 1px solid;
+    margin: 5px 20px 5px 0px;
+    padding: 0px 5px 0px 5px;
+}
+
+/*Task section with list of tasks*/
+.task-section {
+  border: 1px solid;
+  margin: 5px 15px 0px 15px;
+  padding: 5px 35px 35px 35px;
+  background: white;
+}
+
+
+
+.task-bar {
+    text-align: center;
+}
+
+.taskBar-btn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 0px 10px;
+}
+
+.taskBar-btn:hover {
+background: #eee;
+border: 1px solid;
+border-color: green;
+}
+
+.table-row {
+  border: 1px solid;
+}
+
+.task-header {
+  padding-left: 10px;
+  margin-left: 10px;
+  
+}
+
+.tHead {
+    color: blueviolet;
+}
+
+.action-header {
+  padding-left: 50px;
+}
+
+
+.btn-col {
+  margin-top: 25px;
+} 
+
+.loc-btn {
+  margin: 0px 5px 0px 50px;
+}
+
+.task-items {
+  padding-left: 10px;
+}
+
+.details-button {
+  margin: 10px 10px 10px 47px;
+}
+
+.accept-button {
+  margin: 10px 10px 10px 10px;
+}
+
+.decline-button {
+  margin: 10px 10px 10px 10px;
+}
+
+/*Modal Styling From W3schools.com*/
+/*Background*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*Styling in modal box*/
+.m-box {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20x 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/*Animation*/
+@-webkit-keyframes animattop {
+    from {top: -300px; opacity: 0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0;}
+    to {top:0; opacity: 1;}
+}
+
+/*Close Button*/
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.m-header {
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.m-body {
+    padding: 25px 16px;
+}
+
+
+/* .task {
+  margin: -20px 0px 0px 20px;
+}
+
+.task-details {
+  margin: -20px 0px 0px 20px
+}
+
+.time {
+  margin: -20px 0px 0px 20px
+}
+
+.location {
+  margin: -20px 0px 0px 20px
+}
+
+
+
+.task-list {
+    list-style: none;
+}
+
+
+
+.list {
+  margin: 10px 10px 10px -20px
+} */
+
+@media only screen and (max-width: 768px) {
+    .row {
+      flex-wrap: wrap;
+    }
+  
+    .column {
+      flex-basis: 100%;
+    }
+  }
