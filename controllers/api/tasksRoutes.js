@@ -56,6 +56,19 @@ router.post('/', pullData, async (req, res) => {
     });
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const taskData = await Task.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+    res.status(200).json(taskData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.get('/task_status', (req, res) => {
     Task.findAll({
       // Order by title in ascending order
