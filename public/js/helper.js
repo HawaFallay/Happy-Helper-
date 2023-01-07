@@ -1,8 +1,5 @@
-//const { TableHints } = require("sequelize");
-
-let ul = document.getElementById("task-list");
-
-const newHelper = async (event) => {
+let tableEl = document.getElementById("table");
+const availableTasks = async (event) => {
     event.preventDefault();
 
     const response = await fetch(`/api/task`, {
@@ -21,17 +18,12 @@ const newHelper = async (event) => {
             openTaskList.push(data[i]);
         }  
         console.log(dataT);
-    
     }
 
     for (let i = 0; i < openTaskList.length; i++) {
         console.log (openTaskList[i]);
-
+        console.log(i);
         
-         
-        
-        let tableEl = document.getElementById("table");
-
         //Row element
         let trEl = document.createElement("tr");
         tableEl.appendChild(trEl);
@@ -52,13 +44,6 @@ const newHelper = async (event) => {
         tdElClient.textContent = fullName;
         trEl.appendChild(tdElClient);
         tdElClient.classList.add("client-items");
-
-        //Task Details Column
-        // let taskDetails = openTaskList[i].task_details;
-        // console.log(taskDetails);
-        // let tdElDetails = document.createElement("td");
-        // tdElDetails.textContent = taskDetails;
-        // trEl.appendChild(tdElDetails);
         
         //Time Column
         let taskTime = openTaskList[i].task_time;
@@ -82,6 +67,7 @@ const newHelper = async (event) => {
         trEl.appendChild(tdElDetailsBtn);
         tdElDetailsBtn.appendChild(detailsBtn);
         detailsBtn.classList.add("details-button");
+        detailsBtn.setAttribute("data-index", i);
 
         //Accept button column
         let tdElAccpetBtn = document.createElement("td");
@@ -91,6 +77,7 @@ const newHelper = async (event) => {
         trEl.appendChild(tdElAccpetBtn);
         tdElAccpetBtn.appendChild(acceptBtn);
         acceptBtn.classList.add("accept-button");
+        acceptBtn.setAttribute("data-index", i);
 
         //Decline button column
         let tdElDeclineBtn = document.createElement("td");
@@ -101,27 +88,59 @@ const newHelper = async (event) => {
         tdElDeclineBtn.appendChild(declineBtn);
         declineBtn.classList.add("decline-button");
         
-        
-        
+        //Get the modal
+        let modal = document.getElementById("modal");
+        let span = document.getElementsByClassName("close")[0];
 
-        // let listEl = document.createElement("li");
-        // let listElTime = document.createElement("li");
+        detailsBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            //matches button index with openTaskList index
+            if(event.target && event.target.dataset.index !=undefined) {
+                console.log(event.target.dataset.index);
+                modal.style.display = "block";   
+                
+            }
+            if(event.target.dataset.index == i) {
+                console.log(openTaskList[i].task_details);
+                let modalBody = document.getElementById("m-body");
+                let modalHeader = document.getElementById("task-title-modal");
+                let taskTitle = openTaskList[i].task;
+                let taskDetails = openTaskList[i].task_details;
+                console.log(taskDetails);
+               
+                modalHeader.textContent = taskTitle;
+                modalBody.textContent = taskDetails;
+                
+            }
+            
+        });
+
+        span.onclick = function() {
+            mtDetails.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            };
+        };
         
-        // const acceptText = document.createTextNode("Accept");
-        // const declineText = document.createTextNode("Decline");
-        // listEl.textContent = openTask;
-        // listElTime.textContent = taskTime;
-        // ul.appendChild(listEl);
-        // listEl.appendChild(listElTime);
-        // listElTime.appendChild(acceptBtn);
-        // listElTime.appendChild(declineBtn);
-        // acceptBtn.appendChild(acceptText);
-        // declineBtn.appendChild(declineText);
-        // listEl.classList.add("column");
-        // listEl.classList.add("list");
-        // acceptBtn.classList.add("accept-button");
-        // declineBtn.classList.add("decline-button");
+        //Accept Request
+        acceptBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (event.target && event.target.dataset.index !=undefined) {
+                console.log(event.target.dataset.index);
+            }
+        })
     }  
+
 };
 
-document.getElementById('availTaskBtn').addEventListener('click', newHelper);
+
+document.getElementById('availTaskBtn').addEventListener('click', availableTasks);
+
+//This function clears the task list section before rendering the section.
+function clearTable() {
+    tableEl.innerHTML = "";
+}
