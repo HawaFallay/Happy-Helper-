@@ -1,0 +1,24 @@
+<div>
+    <form action="/api/landingPage" method="POST">    
+        <div class="card text-center mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Please select your role:</h5>
+                <label for="roleLogin"></label>
+                <select name="roleLogin" id="roleLogin">
+                <option value="client">Client</option>
+                <option value="helper">Helper</option>
+                </select><br><br>
+            </div>
+        </div>  
+        <div class="card text-center mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>  <br>
+                <br><button id="loginBtn" class="btn btn-primary" type="submit">login</button><br>
+                <a href="/api/registerpage">register</a>
+            </div>
+        </div>
+    </form>
+</div>
