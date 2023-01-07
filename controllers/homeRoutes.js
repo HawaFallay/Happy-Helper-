@@ -48,7 +48,10 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/registerpage', async (req, res) => {
-    res.render('registerpage');
+    res.render('registerpage', {
+        style: 'registerpage.css'
+    }
+    )
 });
 
 router.get('/clientpage', auth, async (req, res) => {

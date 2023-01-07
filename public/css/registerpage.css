@@ -1,0 +1,22 @@
+body {
+  background-color: aqua;
+}
+
+#passwordStrength {
+  margin-top: 10px;
+  height: 5px;
+  bottom: -8px;
+  left: 0;
+  background: transparent;
+  transition: all 300ms ease-in-out;
+}
+
+#passwordFeedback {
+  width: 100%;
+  border: 10px;
+  margin-bottom: 20px;
+  height: 5px;
+  bottom: -8px;
+  left: 0;
+  background: transparent;
+}
