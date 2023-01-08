@@ -133,10 +133,11 @@ const availableTasks = async (event) => {
                 }),
                 headers: { 'Content-Type': 'application/json' },
             });
-            document.location.replace('/clientpage');
+            //document.location.replace('/clientpage');
+            document.querySelector('#newTaskForm')
+            document.addEventListener('submit', newTaskHandler)}
             console.log(taskTime, taskTitle, taskdeets);
         };
 
-        document
-            .querySelector('#newTaskForm')
-            .addEventListener('submit', newTaskHandler)}
+        //document.querySelector('#newTaskForm')
+          //document.addEventListener('submit', newTaskHandler)}
