@@ -1,13 +1,13 @@
-<section>
+<section class="user-form" data-client="{{client.id}}">
     <div class="card">
         <div class="card-header">
-            <h2>Client Page</h2>
+            <h2>Welcome to Happy Helpers</h2>
         </div>
         <div class="container">
             <div class="title"> Task Form Request</div>
             <div class="content">
                 <form action="/api/clientpage" id="newTaskForm" class="card-body needs-validation was-validated"
-                    nonvalidate="" method="POST" data-client="{{client.id}}">
+                    nonvalidate="" method="POST">
                     <div class="task-details">
                        <!-- <div class="input-box">
                             <div class="col-md-10">
@@ -80,7 +80,9 @@
                     </div>
                     <div class="button">
                         <input type="submit" value=" Submit Task" class="submit-btn">
+                        <button class="submit-btn" id="submit-task-btn">Submit Task</button>
                     </div>
+                    
             </div>
             </form>
         </div>
