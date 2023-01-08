@@ -19,8 +19,9 @@
                 <option value="client">Client</option>
                 <option value="helper">Helper</option>
                 </select><br><br>
-                <label for="location">City (Choose the closest one to you, if you dont find yours here): </label>
-                <select name="location" id="location">
+                <label for="location">Address: </label>
+                <input type="location" name="location" id="location" required><br>
+                {{!-- <select name="location" id="location">
                 <option value="San_Francisco">San Francisco</option>
                 <option value="San_Jose">San Jose</option>
                 <option value="Palo_Alto">Palo Alto</option>
@@ -28,7 +29,7 @@
                 <option value="Sacramento">Sacramento</option>
                 <option value="Santa_Rosa">Santa Rosa</option>
                 <option value="Fresno">Fresno</option>
-                </select> <br>
+                </select> <br> --}}
                 <br><button type="submit" class="btn btn-primary">Register</button><br><br>
                  <a href="/api/landingpage">login</a><br><br>
                  <a href="/api/registerpage/tableClient">Client Table DB (Temporary)</a>
