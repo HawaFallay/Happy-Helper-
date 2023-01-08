@@ -58,6 +58,11 @@ Task.init(
                 key: 'id'
             }
         },
+        task_location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            primaryKey:true
+        },
     },
     {
         //link to database connection

@@ -130,8 +130,8 @@ const availableTasks = async (event) => {
                 body: JSON.stringify({
                     "task":taskTitle,
                     "task_details":taskdeets,
-                    location,
-                    taskTime,
+                    "task_location":location,
+                    "task_time":taskTime,
                 }),
                 headers: { 'Content-Type': 'application/json' },
             });
