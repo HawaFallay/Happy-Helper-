@@ -82,6 +82,12 @@ router.get('/clientpage', auth, async (req, res) => {
 });
 
 router.get('/confirmation', auth, async (req, res) => {
+    const helper = await Helper.findOne({ where: { username: req.username } });
+    const plainHelper = helper.get({ plain: true });
+    const task = await Task.findOne({order:[["createdAt","DESC"]]})
+    const plainTask = task.get({plain: true });
+    console.log(plainTask)
+    console.log(plainHelper)
     res.render('confirmation', {
         style: 'confirmation.css'
     });
