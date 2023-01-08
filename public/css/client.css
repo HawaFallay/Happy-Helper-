@@ -1,5 +1,4 @@
 
-//css for client task
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -91,45 +90,8 @@ body{
    /* transform: scale(0.99); */
    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
    }
-  @media(max-width: 584px){
-  .container{
-   max-width: 100%;
- }
- form .task-details .input-box{
-     margin-bottom: 15px;
-     width: 100%;
- }
 
-/* .messages {
-    border: 1px solid;
-    float: left;
-    padding: 5px;
-    margin: 5px 0px 0px 5px
-}
 
-.user-message {
-    border: 1px solid;
-    width: 200px;
-    height: 20px; 
-} */
-
-.task-section {
-    border: 1px solid;
-    margin: 5px 5px 0px 5px;
-    padding: 5px
-}
-
-.task-list {
-    list-style: none;
-}
-
-.accept-button {
-    margin: 0px 10px 0px 10px;
-}
-
-.decline-button {
-    margin: 0px 10px 0px 10px;
-}
 
 /*Modal Styling From W3schools.com*/
 /*Background*/
@@ -198,39 +160,43 @@ body{
 }
 
 
-/* .task {
-margin: -20px 0px 0px 20px;
+
+  @media(max-width: 584px){
+  .container{
+   max-width: 100%;
+ }
+ form .task-details .input-box{
+     margin-bottom: 15px;
+     width: 100%;
+ }
+
+/* .messages {
+    border: 1px solid;
+    float: left;
+    padding: 5px;
+    margin: 5px 0px 0px 5px
 }
 
-.task-details {
-margin: -20px 0px 0px 20px
-}
-
-.time {
-margin: -20px 0px 0px 20px
-}
-
-.location {
-margin: -20px 0px 0px 20px
-}
-
-
-
-.task-list {
-  list-style: none;
-}
-
-
-
-.list {
-margin: 10px 10px 10px -20px
+.user-message {
+    border: 1px solid;
+    width: 200px;
+    height: 20px; 
 } */
 
-@media only screen and (max-width: 768px) {
-  .row {
-    flex-wrap: wrap;
-  }
+.task-section {
+    border: 1px solid;
+    margin: 5px 5px 0px 5px;
+    padding: 5px
+}
 
-  .column {
-    flex-basis: 100%;
-  }}}
+.task-list {
+    list-style: none;
+}
+
+
+
+
+
+
+
+

@@ -60,9 +60,6 @@ const availableTasks = async (event) => {
         console.log (openTaskList[i]);
         console.log(i);
         
-        
-        
-
         //Task Column
         let openTask = openTaskList[i].task;
         console.log(openTask);
