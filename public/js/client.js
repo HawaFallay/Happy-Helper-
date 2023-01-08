@@ -116,7 +116,6 @@ const availableTasks = async (event) => {
 
             const taskTitle = document.querySelector('#taskTitle').value;
             const taskdeets = document.querySelector('#taskDeets').value;
-            const location = document.querySelector('#location').value;
             const taskTime = document.querySelector('#task_time').value;
             //const taskTime = document.querySelector('input[type="date"]').value;
 
@@ -130,7 +129,6 @@ const availableTasks = async (event) => {
                 body: JSON.stringify({
                     "task":taskTitle,
                     "task_details":taskdeets,
-                    "task_location":location,
                     "task_time":taskTime,
                 }),
                 headers: { 'Content-Type': 'application/json' },
