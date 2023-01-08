@@ -1,17 +1,17 @@
-const { TaskStatus } = require('../models');
+// const { TaskStatus } = require('../models');
 
-const statusData = [
-    {
-        status: 'Open',
-    },
-    {
-        status: 'Accepted',
-    },
-    {
-        status: 'Completed',
-    },
-];
+// const statusData = [
+//     {
+//         status: 'Open',
+//     },
+//     {
+//         status: 'Accepted',
+//     },
+//     {
+//         status: 'Completed',
+//     },
+// ];
 
-const seedStatus = () => TaskStatus.bulkCreate(statusData);
+// const seedStatus = () => TaskStatus.bulkCreate(statusData);
 
-module.exports = seedStatus;
+// module.exports = seedStatus;
