@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+#passwordStrength {
+  margin-top: 10px;
+  height: 5px;
+  bottom: -8px;
+  left: 0;
+  background: transparent;
+  transition: all 300ms ease-in-out;
+}
+
+#passwordFeedback {
+  width: 100%;
+  border: 10px;
+  margin-bottom: 20px;
+  height: 5px;
+  bottom: -8px;
+  left: 0;
+  background: transparent;
+}

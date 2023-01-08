@@ -1,29 +1,29 @@
-const { Model, DataTypes } = require('sequelize');
+// const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 
-class TaskStatus extends Model {}
+// class TaskStatus extends Model {}
 
-TaskStatus.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        status: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'taskStatus'
-    }
-);
+// TaskStatus.init(
+//     {
+//         id: {
+//             type: DataTypes.INTEGER,
+//             allowNull: false,
+//             primaryKey: true,
+//             autoIncrement: true
+//         },
+//         status: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//     },
+//     {
+//         sequelize,
+//         timestamps: false,
+//         freezeTableName: true,
+//         underscored: true,
+//         modelName: 'taskStatus'
+//     }
+// );
 
-module.exports = TaskStatus;
+// module.exports = TaskStatus;

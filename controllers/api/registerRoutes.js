@@ -5,9 +5,11 @@ const Helpers = require('../../models/helper');
 
 const registerRoutes = require('express').Router();
 
-registerRoutes.get('/', async (req, res) => {
-    res.render('registerpage');
-});
+// registerRoutes.get('/', async (req, res) => {
+//     res.render('registerpage', {
+//         style: 'registerpage.css'
+//     });
+// });
 
 registerRoutes.get('/registerConfirmation', async (req,res) => {
     res.render('registerConfirmation');
@@ -52,7 +54,7 @@ registerRoutes.post('/', async (req,res) => {
         }
         res.render('registerConfirmation')
     } catch {
-        res.redirect('/api/registerpage')
+        res.redirect('/registerpage')
     }
 });
 

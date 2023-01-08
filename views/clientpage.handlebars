@@ -1,15 +1,20 @@
-<section>
+<section class="user-form" data-client="{{client.id}}">
     <div class="card">
         <div class="card-header">
-            <h2>Client Page</h2>
+            <h2>Welcome to Happy Helpers</h2>
+            <p>{{client.username}}</p>
+            <div style="color: blue">User Profile</div>
+            <div>Name: {{ client.first_name }} {{ client.last_name}}</div>
+            <div>Current Address: {{ client.location }}</div>
         </div>
+        
         <div class="container">
             <div class="title"> Task Form Request</div>
             <div class="content">
-                <form action="/api/clientpage" id="newTaskForm" class="card-body needs-validation was-validated"
+                <form action="clientpage" id="newTaskForm" class="card-body needs-validation was-validated"
                     nonvalidate="" method="POST">
                     <div class="task-details">
-                        <div class="input-box">
+                       <!-- <div class="input-box">
                             <div class="col-md-10">
                                 <label for="validationFirstname" class="form-label"></label>First name:</label><br>
                                 <input class="form-control" type="text" id="validationFirst_name" name="fname" value=""
@@ -28,7 +33,7 @@
                                     Looks good!
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="input-box">
                             <div class="col-md-10">
                                 <label for="TaskTitle" class="form-label"></label>Task Title</label><br>
@@ -80,13 +85,54 @@
                     </div>
                     <div class="button">
                         <input type="submit" value=" Submit Task" class="submit-btn">
+                        <button class="submit-btn" id="submit-task-btn">Submit Task</button>
                     </div>
+                    
             </div>
             </form>
         </div>
 </section>
 
-<section class="task-listN">
+<section class="task-section">
+    <div class="container">
+<div class="task-bar">
+            
+            <button class="taskBar-btn viewTask-btn" id="viewTaskBtn" >View All My Tasks</button>
+        </div>
+        <table id="table" style="width: 100%">
+            <tr class="table-row">
+                <th class="tHead task-header" style="width: 20%;">Task</th>
+                {{!-- <th class="details-column" style="width: 25%;">Details</th> --}}
+                <th class="tHead" style="width: 15%;">Time</th>
+                
+                <th class="tHead" style="width: 20%;">Task Status</th>
+                <th class="tHead action-header" style="width: 25%;">Helper</th>
+                <th class="tHead action-header" style="width: 20%;">Details</th>
+                
+            </tr>
+        </table>
+    </section>
+</div>
+<!-- Modal based on code from W3schools.com -->
+<div id="modal" class="modal">
+    <div class="m-box">
+        <div class="m-header">
+            <span class="close">&times;</span>
+            <h2 id="task-title-modal"></h2>
+        </div>
+        <div class="m-body">
+            <p id="m-body"></p>
+        </div>
+    </div>
+</div>
+    </div>
+        
+
+
+<script src="../js/client.js"></script>
+
+
+<!--<section class="task-listN">
     <div class="container">
         <div class="title"> My Tasks </div>
         <div class="task-section">
@@ -112,4 +158,4 @@
         </div>
     </div>
 
-</section>
+</section> -->
