@@ -13,7 +13,9 @@ const availableTasks = async (event) => {
     console.log(data);
     let openTaskList = [];
     for (let i = 0; i < data.length; i++) {
-        let dataT = data[i].taskStatus.status;
+        console.log(data[i].status);
+        let dataT = data[i].status;
+        
         if (dataT === "Open") {
             openTaskList.push(data[i]);
         }  
@@ -78,7 +80,7 @@ const availableTasks = async (event) => {
         tdElAccpetBtn.appendChild(acceptBtn);
         acceptBtn.classList.add("accept-button");
         acceptBtn.setAttribute("data-index", i);
-        acceptBtn.setAttribute("data-status", openTaskList[i].status_id);
+        acceptBtn.setAttribute("data-status", openTaskList[i].status);
         acceptBtn.setAttribute("data-task", openTaskList[i].id);
 
         //Decline button column
@@ -134,30 +136,33 @@ const availableTasks = async (event) => {
             if (event.target && event.target.dataset.index !=undefined) {
                 console.log(event.target.dataset.index);
                 console.log(event.target.dataset.status);
+                console.log(event.target.dataset.task);
                 
-                const response2 = await fetch(`/api/taskStatus/${event.target.dataset.status}`, {
+                const response2 = await fetch(`/api/task/${event.target.dataset.task}`, {
                     method: 'PUT',
                     headers: { 
                         'Content-Type': 'application/json' 
                     },
                     body: JSON.stringify({
-                        "status": "Accepted"
+                        "status": "Accepted",
+                        "helper_id": document.querySelector(".user-form").dataset.helper,
+                        "task": ""
                     })
                 });
                 const result2 = await response2.json();
                 console.log(result2);
 
-                const response3 = await fetch(`/api/task/${event.target.dataset.task}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "helper_id": document.querySelector(".user-form").dataset.helper
-                    })
-                });
-                const result3 = await response3.json();
-                console.log(result3);
+                // const response3 = await fetch(`/api/task/${event.target.dataset.task}`, {
+                //     method: 'PUT',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({
+                //         "helper_id": document.querySelector(".user-form").dataset.helper
+                //     })
+                // });
+                // const result3 = await response3.json();
+                // console.log(result3);
             }
         })
     }  

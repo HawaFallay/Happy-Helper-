@@ -106,7 +106,7 @@ const availableTasks = async (event) => {
                 modal.style.display = "none";
             };
         };
-
+    }
         document.getElementById('availTaskBtn').addEventListener('click', availableTasks);
 
 
@@ -128,8 +128,8 @@ const availableTasks = async (event) => {
             await fetch(`/api/task`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    taskTitle,
-                    taskdeets,
+                    "task":taskTitle,
+                    "task_details":taskdeets,
                     location,
                     taskTime,
                 }),

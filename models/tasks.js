@@ -28,14 +28,19 @@ Task.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-            //Will probably make another table for this, so we can view tasks by status.  
-        status_id: {
-            type: DataTypes.INTEGER,
-            defaultValue: 1,
-            references: {
-                model: 'taskStatus',
-                key: 'id'
-            }
+            //Changing this to a string. Getting rid of taskStatus table.  
+        // status_id: {
+        //     type: DataTypes.INTEGER,
+        //     defaultValue: 1,
+        //     references: {
+        //         model: 'taskStatus',
+        //         key: 'id'
+        //     }
+        // },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "open", 
         },
         //This allows us to get client associated with the task
         client_id: {
