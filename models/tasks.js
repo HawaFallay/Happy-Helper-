@@ -22,12 +22,10 @@ Task.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-       //task_time: {
-            //just using a string for now to put in values manually. Woul be nice to find a way to have a drop down menu for date and time in the front end.
-            // wondering how to set the default time to the current time stamp
-            //type: DataTypes.STRING,
-            //allowNull: false
-       // },
+       task_time: {
+            type: DataTypes.STRING,
+            allowNull: false
+       },
             //Changing this to a string. Getting rid of taskStatus table.  
         // status_id: {
         //     type: DataTypes.INTEGER,
@@ -40,7 +38,7 @@ Task.init(
         status: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: "open", 
+            defaultValue: "Open", 
         },
         //This allows us to get client associated with the task
         client_id: {
@@ -57,11 +55,6 @@ Task.init(
                 model: 'helper',
                 key: 'id'
             }
-        },
-        task_location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            primaryKey:true
         },
     },
     {
