@@ -76,8 +76,30 @@ border-color: green;
   
 }
 
-.tHead {
+.tHead1 {
     color: blueviolet;
+    width: 15%;
+}
+
+.tHead2 {
+  color: blueviolet;
+  width: 15%;
+}
+
+.tHead3 {
+  color: blueviolet;
+  width: 20%;
+}
+
+.tHead4 {
+  color: blueviolet;
+  width: 15%;
+}
+
+.tHead5 {
+  color: blueviolet;
+  width: 13%;
+  padding-left: 50px;
 }
 
 .action-header {

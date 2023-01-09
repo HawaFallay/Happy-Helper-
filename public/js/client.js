@@ -72,9 +72,10 @@ const openTasks = async (event) => {
         console.log(i);
 
         //Row for tasks
-        let trEl = document.createElement("tr");
+        trEl = document.createElement("tr");
         tableEl.appendChild(trEl);
         trEl.classList.add("table-row");
+
 
         //Task Column
         let myTasks = myTaskList[i].task;

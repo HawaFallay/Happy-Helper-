@@ -1,41 +1,9 @@
 let tableEl = document.getElementById("table");
 
-//Row element
-let trEl = document.createElement("tr");
-tableEl.appendChild(trEl);
-trEl.classList.add("table-row");
-
-//Task Column
-let tdElTask = document.createElement("td");
-
-//Client Column
-let tdElClient = document.createElement("td");
-
-//Time Column
-let tdElTime = document.createElement("td");
-
-//Location Column
-let tdElLocation = document.createElement("td");
-
-//Details Button Column
-let tdElDetailsBtn = document.createElement("td");
-let detailsBtn = document.createElement("button");
-let detailsText = document.createTextNode("Get Details");
-
-//Accept button column
-let tdElAccpetBtn = document.createElement("td");
-let acceptBtn = document.createElement("button");
-let acceptText = document.createTextNode("Accept");
-
-//Decline button column
-let tdElDeclineBtn = document.createElement("td");
-let declineBtn = document.createElement("button");
-let declineText = document.createTextNode("Decline");
-
 //This function displays a list of unaccepted tasks.
 const availableTasks = async (event) => {
     event.preventDefault();
-
+    clearTable();
     const response = await fetch(`/api/task`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -56,14 +24,46 @@ const availableTasks = async (event) => {
         console.log(dataT);
     }
 
+     //Row Headers
+     let trEl = document.createElement("tr");
+     tableEl.appendChild(trEl);
+     trEl.classList.add("table-row");
+     let thElTask = document.createElement("th");
+     thElTask.textContent = "Task";
+     trEl.appendChild(thElTask);
+     thElTask.classList.add("tHead1");
+     thElTask.classList.add("task-header");
+     let thElUser = document.createElement("th");
+     thElUser.textContent = "User";
+     trEl.appendChild(thElUser);
+     thElUser.classList.add("tHead2");
+     let thElTime = document.createElement("th");
+     thElTime.textContent = "Time";
+     trEl.appendChild(thElTime);
+     thElTime.classList.add("tHead3");
+     let thElLoc = document.createElement("th");
+     thElLoc.textContent = "Location";
+     trEl.appendChild(thElLoc);
+     thElLoc.classList.add("tHead4");
+     let thElAct = document.createElement("th");
+     thElAct.textContent = "Actions";
+     trEl.appendChild(thElAct);
+     thElAct.classList.add("tHead5");
+
+
     for (let i = 0; i < openTaskList.length; i++) {
         console.log (openTaskList[i]);
         console.log(i);
+
+        //Row element
+        let trEl = document.createElement("tr");
+        tableEl.appendChild(trEl);
+        trEl.classList.add("table-row");
         
         //Task Column
         let openTask = openTaskList[i].task;
         console.log(openTask);
-
+        let tdElTask = document.createElement("td");
         tdElTask.textContent = openTask;
         trEl.appendChild(tdElTask);
         tdElTask.classList.add("task-items");
@@ -71,7 +71,7 @@ const availableTasks = async (event) => {
         //Client Column
         let fullName = openTaskList[i].client.first_name + " " + openTaskList[i].client.last_name;
         console.log(fullName);
-        
+        let tdElClient = document.createElement("td");
         tdElClient.textContent = fullName;
         trEl.appendChild(tdElClient);
         tdElClient.classList.add("client-items");
@@ -79,19 +79,21 @@ const availableTasks = async (event) => {
         //Time Column
         let taskTime = openTaskList[i].task_time;
         console.log(taskTime);
-        
+        let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
         trEl.appendChild(tdElTime);
 
         //Location Column
         let location = openTaskList[i].client.location;
         console.log(location);
-        
+        let tdElLocation = document.createElement("td");
         tdElLocation.textContent = location;
         trEl.appendChild(tdElLocation);
 
         //Details button column
-        
+        let tdElDetailsBtn = document.createElement("td");
+        let detailsBtn = document.createElement("button");
+        let detailsText = document.createTextNode("Get Details");
         detailsBtn.appendChild(detailsText);
         trEl.appendChild(tdElDetailsBtn);
         tdElDetailsBtn.appendChild(detailsBtn);
@@ -99,7 +101,9 @@ const availableTasks = async (event) => {
         detailsBtn.setAttribute("data-index", i);
 
         //Accept button column
-        
+        let tdElAccpetBtn = document.createElement("td");
+        let acceptBtn = document.createElement("button");
+        let acceptText = document.createTextNode("Accept");
         acceptBtn.appendChild(acceptText);
         trEl.appendChild(tdElAccpetBtn);
         tdElAccpetBtn.appendChild(acceptBtn);
@@ -109,11 +113,13 @@ const availableTasks = async (event) => {
         acceptBtn.setAttribute("data-task", openTaskList[i].id);
 
         //Decline button column
-        
-        declineBtn.appendChild(declineText);
-        trEl.appendChild(tdElDeclineBtn);
-        tdElDeclineBtn.appendChild(declineBtn);
-        declineBtn.classList.add("decline-button");
+        // let tdElDeclineBtn = document.createElement("td");
+        // let declineBtn = document.createElement("button");
+        // let declineText = document.createTextNode("Decline");
+        // declineBtn.appendChild(declineText);
+        // trEl.appendChild(tdElDeclineBtn);
+        // tdElDeclineBtn.appendChild(declineBtn);
+        // declineBtn.classList.add("decline-button");
         
         //Get the modal
         let modal = document.getElementById("modal");
@@ -191,6 +197,8 @@ const availableTasks = async (event) => {
 
 };
 
+
+
 const acceptedTasks = async (event) => {
     event.preventDefault();
 
@@ -208,7 +216,7 @@ const acceptedTasks = async (event) => {
         console.log(data[i].status);
         let dataT = data[i].status;
 
-        if (dataT === "Accepted") {
+        if (dataT == "Accepted") {
             acceptedTaskList.push(data[i]);
         }
         console.log(dataT);
@@ -217,19 +225,25 @@ const acceptedTasks = async (event) => {
     for (let i = 0; i < acceptedTaskList.length; i++) {
         console.log(acceptedTaskList[i]);
 
+        //Row element
+        let trEl = document.createElement("tr");
+        tableEl.appendChild(trEl);
+        trEl.classList.add("table-row");
+
         //Task Column
         let acceptedTask = acceptedTaskList[i].task;
         console.log(acceptedTask);
-
+        let tdElTask = document.createElement("td");
         tdElTask.textContent = acceptedTask;
-        trEl.appendChild(tdElTask)
+        trEl.appendChild(tdElTask);
+        tdElTask.classList.add("task-items");
     }
 }
     
 
 
 document.getElementById('availTaskBtn').addEventListener('click', availableTasks);
-
+document.getElementById('acceptedTaskBtn').addEventListener('click', acceptedTasks);
 //This function clears the task list section before rendering the section.
 function clearTable() {
     tableEl.innerHTML = "";
