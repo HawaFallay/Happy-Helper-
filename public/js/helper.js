@@ -268,7 +268,7 @@ const acceptedTasks = async (event) => {
         tdElTask.classList.add("task-items");
 
         //Client Column
-        let fullName = helperAcceptedTasks[i].client.first_name + " " + acceptedTaskList[i].client.last_name;
+        let fullName = helperAcceptedTasks[i].client.first_name + " " + helperAcceptedTasks[i].client.last_name;
         console.log(fullName);
         let tdElClient = document.createElement("td");
         tdElClient.textContent = fullName;
