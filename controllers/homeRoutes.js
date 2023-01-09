@@ -89,7 +89,9 @@ router.get('/confirmation', auth, async (req, res) => {
     console.log(plainTask)
     console.log(plainHelper)
     res.render('confirmation', {
-        style: 'confirmation.css'
+        style: 'confirmation.css', 
+        task: plainTask,
+        helper_name: plainHelper.username
     });
 });
 
