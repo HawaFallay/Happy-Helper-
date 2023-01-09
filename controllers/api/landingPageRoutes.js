@@ -12,8 +12,8 @@ landingPageRoutes.get('/', async (req,res) => {
 
 landingPageRoutes.post('/', async (req,res) => {
     try {
-        const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN/*, { expiresIn: '10' }*/)
-        res.cookie('loginToken', accessToken, { httpOnly:true })
+        const accessToken = jwt.sign({username: req.body.username},process.env.SECRET_ACCESS_TOKEN, { expiresIn: '1d' })
+        res.cookie('loginToken', accessToken/*, { httpOnly:true }*/)
         console.log(req.body);
     if(req.body.roleLogin === "client") {
         clientStoredInfo = await Client.findOne({where: {username: req.body.username} });
