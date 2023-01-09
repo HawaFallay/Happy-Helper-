@@ -44,7 +44,10 @@ try {
 });
 
 router.get('/', async (req, res) => {
-    res.render('landingpage');
+    res.render('landingpage', {
+        style: 'landingpage.css'
+    });
+    
 });
 
 router.get('/registerpage', async (req, res) => {
@@ -57,7 +60,7 @@ router.get('/registerpage', async (req, res) => {
 router.get('/clientpage', auth, async (req, res) => {
     console.log("This is the get route: " + req.username);
     console.log("This is the get route: " + req.userHelperData);
-    console.log("This is the get route: " + req.userClientData.id);
+    //console.log("This is the get route: " + req.userClientData.id);
     try {
         const client = await Client.findOne({ where: { username: req.username } });
     const plainClient = client.get({ plain: true });

@@ -13,6 +13,7 @@ const jwt = require ('jsonwebtoken')
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 
+
 const app = express();
 
 
@@ -33,7 +34,7 @@ app.use(cookieParser());
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
+  app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT)); 
 });
 
 

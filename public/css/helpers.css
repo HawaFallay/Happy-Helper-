@@ -16,33 +16,50 @@ body {
     flex: 1;
 }
 
-.user-form {
-    border: 1px solid;
+.user-form { 
     padding: 20px;
-    margin: 0px 5px 0px 5px;
+    margin: 40px 5px 10px 15px;
     background: white;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 
-.helper-title,
-.helper-progress {
-    border: 1px solid;
-    margin: 5px 0px 5px 20px;
+.username {
+  color: blueviolet;
+}
+
+.profile {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.helper-title {
+    margin: 5px 0px 5px 0px;
     padding: 0px 5px 0px 5px;
+    font-weight: bold;
 }
 
 .helper-name,
 .helper-location {
-    border: 1px solid;
     margin: 5px 20px 5px 0px;
     padding: 0px 5px 0px 5px;
+    font-weight: bold;
+}
+
+.logout {
+  border: none;
+  color: red;
+  background-color: white;
 }
 
 /*Task section with list of tasks*/
 .task-section {
-  border: 1px solid;
-  margin: 5px 15px 0px 15px;
+  margin: 15px 15px 0px 15px;
   padding: 5px 35px 35px 35px;
   background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }
 
 
@@ -58,12 +75,13 @@ body {
     display: inline-block;
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 0px 10px;
+    font-weight: bold;
 }
 
 .taskBar-btn:hover {
 background: #eee;
 border: 1px solid;
-border-color: green;
+border-color: blueviolet;
 }
 
 .table-row {
@@ -76,8 +94,41 @@ border-color: green;
   
 }
 
-.tHead {
+.tHead1 {
     color: blueviolet;
+    width: 15%;
+}
+
+.tHead2 {
+  color: blueviolet;
+  width: 15%;
+}
+
+.tHead3 {
+  color: blueviolet;
+  width: 20%;
+}
+
+.tHead4 {
+  color: blueviolet;
+  width: 15%;
+}
+
+.tHead5 {
+  color: blueviolet;
+  width: 13%;
+  padding-left: 50px;
+}
+
+.tHead5e {
+  color: blueviolet;
+  width: 13%;
+}
+
+.tHead6e {
+  color: blueviolet;
+  width: 13%;
+  padding-left: 50px;
 }
 
 .action-header {
@@ -99,14 +150,44 @@ border-color: green;
 
 .details-button {
   margin: 10px 10px 10px 47px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .accept-button {
   margin: 10px 10px 10px 10px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.decline-button {
+.complete-button {
   margin: 10px 10px 10px 10px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*Modal Styling From W3schools.com*/
@@ -174,35 +255,6 @@ border-color: green;
 .m-body {
     padding: 25px 16px;
 }
-
-
-/* .task {
-  margin: -20px 0px 0px 20px;
-}
-
-.task-details {
-  margin: -20px 0px 0px 20px
-}
-
-.time {
-  margin: -20px 0px 0px 20px
-}
-
-.location {
-  margin: -20px 0px 0px 20px
-}
-
-
-
-.task-list {
-    list-style: none;
-}
-
-
-
-.list {
-  margin: 10px 10px 10px -20px
-} */
 
 @media only screen and (max-width: 768px) {
     .row {

@@ -72,9 +72,10 @@ const openTasks = async (event) => {
         console.log(i);
 
         //Row for tasks
-        let trEl = document.createElement("tr");
+        trEl = document.createElement("tr");
         tableEl.appendChild(trEl);
         trEl.classList.add("table-row");
+
 
         //Task Column
         let myTasks = myTaskList[i].task;
@@ -86,9 +87,10 @@ const openTasks = async (event) => {
         tdElTask.classList.add("task-items");
 
         //Time Column
-        let taskTime = myTaskList[i].task_time;
-        console.log(taskTime);
-        
+        let taskTime = moment(myTaskList[i].task_time).format("YYYY/MM/DD hh:mm A");
+        console.log(taskTime); 
+        console.log(myTaskList[i].task_time);
+
         let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
         trEl.appendChild(tdElTime);
@@ -157,7 +159,7 @@ const openTasks = async (event) => {
         });
 
         span.onclick = function() {
-            mtDetails.style.display = "none";
+            modal.style.display = "none";
         };
 
         window.onclick = function(event) {
