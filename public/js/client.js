@@ -87,8 +87,9 @@ const openTasks = async (event) => {
         tdElTask.classList.add("task-items");
 
         //Time Column
-        let taskTime = myTaskList[i].task_time;
+        let taskTime = moment(myTaskList[i].task_time).utc().format("MM/D/YYYY");
         console.log(taskTime);
+
         
         let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
@@ -158,7 +159,7 @@ const openTasks = async (event) => {
         });
 
         span.onclick = function() {
-            mtDetails.style.display = "none";
+            modal.style.display = "none";
         };
 
         window.onclick = function(event) {

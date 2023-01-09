@@ -40,6 +40,33 @@ const clientData = [
         role_title: "Client",
         location: '317 Florence Street, Daly City, CA, 94014'
     },
+    {
+        first_name: 'Joan',
+        last_name: 'Clarke',
+        username: 'Joan of Clark',
+        email: 'JClarke@test.com',
+        password: tempPassword,
+        role_title: "Client",
+        location: '34 E Moltke Street, Daly City, CA, 94014'
+    },
+    {
+        first_name: 'Charles',
+        last_name: 'Babbage',
+        username: 'Cabbage',
+        email: 'CBabbage@test.com',
+        password: tempPassword,
+        role_title: "Client",
+        location: '511 Garfield Avenue, San Francisco, CA, 94112'
+    },
+    {
+        first_name: 'Katherine',
+        last_name: 'Johnson',
+        username: 'KJ',
+        email: 'KJohnson@test.com',
+        password: tempPassword,
+        role_title: "Client",
+        location: '217 Plymouth Avenue, San Francisco, CA, 94112'
+    },
 ];
 
 const seedClients = () => Client.bulkCreate(clientData);
