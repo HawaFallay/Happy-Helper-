@@ -15,11 +15,9 @@ const seedAll = async () => {
     // await seedTaskStatus();
     // console.log('\n----- TaskStatus SEEDED -----\n');
     await seedTasks();
-    console.log('\n----- Task SEEDED -----\n');
-    
-    
-
-    process.exit(0);
+    console.log('\n----- Task SEEDED -----\n'); 
+    // process.exit(0);
 };
 
-seedAll();
+// seedAll();
+module.exports = seedAll;

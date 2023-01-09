@@ -12,6 +12,8 @@ const Tasks = require ('./models/Tasks');
 const jwt = require ('jsonwebtoken')
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
+const seedClients = require('./seeds/client-seeds');
+const seedAll = require('./seeds');
 
 const app = express();
 
@@ -33,8 +35,8 @@ app.use(cookieParser());
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
+  seedAll();
 });
 
-
+app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
 
