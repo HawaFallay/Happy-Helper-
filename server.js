@@ -12,8 +12,7 @@ const Tasks = require ('./models/Tasks');
 const jwt = require ('jsonwebtoken')
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
-const seedClients = require('./seeds/client-seeds');
-const seedAll = require('./seeds');
+
 
 const app = express();
 
