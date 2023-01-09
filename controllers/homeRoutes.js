@@ -44,7 +44,10 @@ try {
 });
 
 router.get('/', async (req, res) => {
-    res.render('landingpage');
+    res.render('landingpage', {
+        style: 'landingpage.css'
+    });
+    
 });
 
 router.get('/registerpage', async (req, res) => {

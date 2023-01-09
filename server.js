@@ -35,8 +35,8 @@ app.use(cookieParser());
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  seedAll();
+  app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT)); 
 });
 
-app.listen(PORT, () => console.log('Now listening on: http://localhost:' + PORT));
+
 
