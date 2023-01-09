@@ -1,4 +1,7 @@
 const { Client } = require('../models');
+const bcrypt = require('bcrypt');
+const tempPassword = bcrypt.hashSync("temporary", 10);
+
 
 const clientData = [
     {
@@ -6,7 +9,7 @@ const clientData = [
         last_name: 'Gosling',
         username: 'JGoose',
         email: 'JGosling@test.com',
-        password: 'temporary',
+        password: tempPassword,
         role_title: "Client",
         location: '15 Blossom Court, Daly City, CA, 94014',
     },
@@ -15,7 +18,7 @@ const clientData = [
         last_name: 'Berners-Lee',
         username: 'T-Burn',
         email: 'TimBL@test.com',
-        password: 'temporary',
+        password: tempPassword,
         role_title: "Client",
         location: '11 Wyandotte Avenue, Daly City, CA, 94014'
     },
@@ -24,7 +27,7 @@ const clientData = [
         last_name: 'Hopper',
         username: 'GHoops',
         email: 'GHopper@test.com',
-        password: 'temporary',
+        password: tempPassword,
         role_title: "Client",
         location: '125 Price Street, Daly City, CA, 94014'
     },
@@ -33,7 +36,7 @@ const clientData = [
         last_name: 'Turing',
         username: 'A-Turns',
         email: 'ATuring@test.com',
-        password: 'temporary',
+        password: tempPassword,
         role_title: "Client",
         location: '317 Florence Street, Daly City, CA, 94014'
     },
