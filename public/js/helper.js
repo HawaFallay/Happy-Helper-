@@ -78,7 +78,7 @@ const availableTasks = async (event) => {
         tdElClient.classList.add("client-items");
         
         //Time Column
-        let taskTime = openTaskList[i].task_time;
+        let taskTime = moment(openTaskList[i].task_time).utc().format("YYYY.MM.DD HH:MM A");
         console.log(taskTime);
         let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
@@ -276,7 +276,7 @@ const acceptedTasks = async (event) => {
         tdElClient.classList.add("client-items");
 
         //Time Column
-        let taskTime = helperAcceptedTasks[i].task_time;
+        let taskTime = moment(helperAcceptedTasks[i].task_time).utc().format("YYYY.MM.DD HH:MM A");
         console.log(taskTime);
         let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
