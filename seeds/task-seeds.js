@@ -4,7 +4,7 @@ const taskData = [
     {
         task: "Go for a walk",
         task_details: "I would like to go for a walk down my hallway. I have difficulty finding the motivation to just stand up and walk, but my doctor has warned me that I need to find some kind of exercise. My apartment is pet free. I do use a walker to help with my balance.",
-        task_time: "Wednesday January 11th at 12:00pm",
+        task_time: "2023-01-11T12:00",
         status: "Accepted",
         client_id: 1,
         helper_id: 1,
@@ -12,7 +12,7 @@ const taskData = [
     {
         task: "Help with groceries",
         task_details: "I would like help shopping at the grocery store. I recently had shoulder surgery, and I can't lift heavy objects. I can go with you to the store to help pick things out. I just need help carrying the items to the car and into my home.",
-        task_time: "Friday January 13th at 12:00pm",
+        task_time: "2023-01-12T15:25",
         status: "Open",
         client_id: 2,
         helper_id: null,

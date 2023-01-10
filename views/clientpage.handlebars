@@ -1,12 +1,13 @@
 <section class="user-form" data-client="{{client.id}}">
-    <button type="submit" id="logout">Logout</button>
     <div class="card">
         <div class="card-header">
             <h2>Welcome to Happy Helpers</h2>
-            <p>{{client.username}}</p>
-            <div style="color: blue">User Profile</div>
+            <p class="username">{{client.username}}</p>
+            <div class="user-profile">User Profile</div>
             <div>Name: {{ client.first_name }} {{ client.last_name}}</div>
+            <div>Role: <span>{{ client.role_title }}</span></div>
             <div>Current Address: {{ client.location }}</div>
+            <button type="submit" id="logout" class="logout">Logout</button>
         </div>
         
         <div class="container">
@@ -106,13 +107,13 @@
         </div>
         <table id="table" style="width: 100%">
             <tr class="table-row">
-                <th class="tHead task-header" style="width: 20%;">Task</th>
+                <th class="tHead1 task-header" style="width: 15%;">Task</th>
                 {{!-- <th class="details-column" style="width: 25%;">Details</th> --}}
-                <th class="tHead" style="width: 15%;">Time</th>
+                <th class="tHead2" style="width: 20%;">Time</th>
                 
-                <th class="tHead" style="width: 20%;">Task Status</th>
-                <th class="tHead action-header" style="width: 25%;">Helper</th>
-                <th class="tHead action-header" style="width: 20%;">Details</th>
+                <th class="tHead3" style="width: 20%;">Task Status</th>
+                <th class="tHead4 action-header" style="width: 25%;">Helper</th>
+                <th class="tHead5 action-header" style="width: 20%;">Details</th>
                 
             </tr>
         </table>

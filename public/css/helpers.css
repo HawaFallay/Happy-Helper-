@@ -32,6 +32,7 @@ body {
 .profile {
   font-weight: bold;
   font-size: 20px;
+  text-decoration: underline;
 }
 
 .helper-title {
