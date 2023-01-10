@@ -21,10 +21,12 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-app.get("/", async (req, res) => {
-  const result = await db.query("SELECT 1 + 1 AS num");
-  res.json(result);
-});
+// app.get("/", async (req, res) => {
+//   db.query("SELECT 1 + 1 AS num", ( error, result ) => {
+//     res.json(result);
+//   });
+//   res.json(result);
+// });
 
 app.use(express.static('public'));
 
