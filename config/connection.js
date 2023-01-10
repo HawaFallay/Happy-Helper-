@@ -1,4 +1,9 @@
 const Sequelize = require('sequelize');
+const mysql = require("mysql2");
+
+const connection = mysql.createConnection({
+  uri: process.env.CLEARDB_DATABASE_URL,
+})
 
 // Enable access to .env variables
 require('dotenv').config();
@@ -18,3 +23,4 @@ sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
+module.exports = connection;

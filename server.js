@@ -6,6 +6,7 @@ const routes = require('./controllers');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const bcrypt = require('bcrypt');
+const db = require('./config/connection');
 //importing mode to sync table with database
 //const Tasks = require ('./models/Tasks');
 const jwt = require ('jsonwebtoken')
@@ -19,6 +20,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
+
+app.get("/", async (req, res) => {
+  const result = await db.query("SELECT 1 + 1 AS num");
+  res.json(result);
+});
 
 app.use(express.static('public'));
 
