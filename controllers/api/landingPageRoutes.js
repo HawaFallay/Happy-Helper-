@@ -17,7 +17,7 @@ landingPageRoutes.post('/', async (req,res) => {
         console.log(req.body);
     if(req.body.roleLogin === "client") {
         clientStoredInfo = await Client.findOne({where: {username: req.body.username} });
-        //console.log(clientStoredInfo.dataValues.password);
+
 
         if(!clientStoredInfo) {
             return res.status(404).json({message: "login Failed. User not found"})
@@ -51,7 +51,6 @@ landingPageRoutes.post('/', async (req,res) => {
         req.body.password,
         helperStoredInfo.dataValues.password,
     )
-    //console.log("Console log for valid password bro " + validPassword);
 
     if(!validPassword) {
         return res.status(404).json({message: "Incorrect Password"});

@@ -5,10 +5,6 @@ let tableEl = document.getElementById("table");
 const newTaskHandler = async (event) => {
     event.preventDefault();
 
-    // const taskTitle = document.querySelector('#taskTitle').value;
-    // const taskdeets = document.querySelector('#taskDeets').value;
-    // const taskTime = document.querySelector('#task_time').value;
-
     const taskTitle = document.getElementById("taskTitle").value;
     const taskDeets = document.getElementById("taskDeets").value;
     const taskTime = document.getElementById("task_time").value;
@@ -37,8 +33,6 @@ const newTaskHandler = async (event) => {
     }
     const data = await response.json();
     console.log(data);
-
-    //const taskTime = document.querySelector('input[type="date"]').value;
 
 };
 
@@ -171,10 +165,6 @@ const openTasks = async (event) => {
     };
 };
 
-
-
-        //document.querySelector('#newTaskForm')
-        //document.addEventListener('submit', newTaskHandler)}
 
         document.getElementById('submit-task-btn').addEventListener('click', newTaskHandler);
         document.getElementById('viewTaskBtn').addEventListener("click", openTasks);

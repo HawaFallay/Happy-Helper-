@@ -112,15 +112,6 @@ const availableTasks = async (event) => {
         acceptBtn.setAttribute("data-index", i);
         acceptBtn.setAttribute("data-status", openTaskList[i].status);
         acceptBtn.setAttribute("data-task", openTaskList[i].id);
-
-        //Decline button column
-        // let tdElDeclineBtn = document.createElement("td");
-        // let declineBtn = document.createElement("button");
-        // let declineText = document.createTextNode("Decline");
-        // declineBtn.appendChild(declineText);
-        // trEl.appendChild(tdElDeclineBtn);
-        // tdElDeclineBtn.appendChild(declineBtn);
-        // declineBtn.classList.add("decline-button");
         
         //Get the modal
         let modal = document.getElementById("modal");
@@ -377,17 +368,6 @@ const acceptedTasks = async (event) => {
                 const result2 = await response2.json();
                 console.log(result2);
 
-                // const response3 = await fetch(`/api/task/${event.target.dataset.task}`, {
-                //     method: 'PUT',
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     },
-                //     body: JSON.stringify({
-                //         "helper_id": document.querySelector(".user-form").dataset.helper
-                //     })
-                // });
-                // const result3 = await response3.json();
-                // console.log(result3);
             };
         });
     };
