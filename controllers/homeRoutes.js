@@ -1,7 +1,3 @@
-// const router = require('express').Router();
-// const { application, Router } = require('express');
-// const { Client, Helper, Tasks } = require('../models');
-
 const { Router } = require('express');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');

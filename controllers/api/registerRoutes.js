@@ -5,12 +5,6 @@ const Helpers = require('../../models/helper');
 
 const registerRoutes = require('express').Router();
 
-// registerRoutes.get('/', async (req, res) => {
-//     res.render('registerpage', {
-//         style: 'registerpage.css'
-//     });
-// });
-
 registerRoutes.get('/registerConfirmation', async (req,res) => {
     res.render('registerConfirmation');
 });
