@@ -16,6 +16,21 @@ body{
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
 
+  .username {
+    color: blueviolet;
+  }
+
+  .user-profile {
+    text-decoration: underline;
+    font-size: 20px;
+  }
+
+  .logout {
+    border: none;
+    background-color: white;
+    color: red;
+  }
+
   .container{
     max-width: 700px;
     width: 100%;
@@ -73,24 +88,40 @@ body{
     height: 45px;
     margin: 35px 0
   }
- .button input{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+.button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
   }
-  .button input:hover{
-   /* transform: scale(0.99); */
-   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-   }
+  
 
+.tHead2 {
+  padding-left: 10px;
+}
+
+.time-items {
+  padding-left: 10px;
+}
+
+.tHead3 {
+  padding-left: 20px;
+}
+
+.task-status {
+  padding-left: 20px;
+}
 
 
 /*Modal Styling From W3schools.com*/

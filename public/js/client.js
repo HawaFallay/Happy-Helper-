@@ -87,14 +87,14 @@ const openTasks = async (event) => {
         tdElTask.classList.add("task-items");
 
         //Time Column
-        let taskTime = moment(myTaskList[i].task_time).format("YYYY/MM/DD hh:mm A");
+        let taskTime = moment(myTaskList[i].task_time).format("dddd, MMMM Do YYYY, h:mm a");
         console.log(taskTime); 
         console.log(myTaskList[i].task_time);
 
         let tdElTime = document.createElement("td");
         tdElTime.textContent = taskTime;
         trEl.appendChild(tdElTime);
-        tdElTime.classList.add("client-items");
+        tdElTime.classList.add("time-items");
 
         //Task Status Column
         let taskStatus = myTaskList[i].status;
