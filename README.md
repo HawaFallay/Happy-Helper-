@@ -1,6 +1,5 @@
 # Happy-Helper
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-WELCOME!
 
 This repo will contain code for our Happy Helper App
 
