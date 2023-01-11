@@ -6,8 +6,9 @@ const routes = require('./controllers');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 const bcrypt = require('bcrypt');
+const db = require('./config/connection');
 //importing mode to sync table with database
-const Tasks = require ('./models/Tasks');
+//const Tasks = require ('./models/Tasks');
 const jwt = require ('jsonwebtoken')
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
@@ -19,6 +20,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
+
+// app.get("/", async (req, res) => {
+//   db.query("SELECT 1 + 1 AS num", ( error, result ) => {
+//     res.json(result);
+//   });
+//   res.json(result);
+// });
 
 app.use(express.static('public'));
 
